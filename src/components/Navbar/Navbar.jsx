@@ -24,7 +24,16 @@ const Navbar = () => {
           <ul className={styles.navLinks}>
             <li><a href="#services" className={styles.navLink}>Services</a></li>
             <li><a href="#products" className={styles.navLink}>Products</a></li>
-            <li><a href="#global" className={styles.navLink}>ACPL Global</a></li>
+            <li>
+              <a
+                href="https://acpl.com/"
+                className={styles.navLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ACPL Global
+              </a>
+            </li>
           </ul>
           <div className={styles.ctaButton}>
             <a href="#assessment" className="btn btn--primary">Contact Us</a>
@@ -44,7 +53,16 @@ const Navbar = () => {
             <ul className={styles.mobileNavLinks}>
               <li><a href="#about" onClick={closeMenu}>About Us</a></li>
               <li><a href="#services" onClick={closeMenu}>Services</a></li>
-              <li><a href="#global" onClick={closeMenu}>ACPL Global Website</a></li>
+              <li>
+                <a
+                  href="https://acpl.com/"
+                  onClick={closeMenu}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ACPL Global Website
+                </a>
+              </li>
               <li>
                 <a href="#assessment" className="btn btn--primary" onClick={closeMenu}>
                   Contact Us

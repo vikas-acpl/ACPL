@@ -1,0 +1,118 @@
+.testimonials {
+    margin-top: 140px;
+}
+
+.testimonialsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .testimonials {
+  padding: 60px 0;
+  background: #f5f5f5;
+} */
+
+/* .testimonialsContainer {
+  max-width: 1220px;
+  margin: 0 auto;
+} */
+
+.partnerHeader {
+    text-align: center;
+}
+
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--color-white);
+    border-radius: 55px;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 12px;
+    box-shadow: 0 2px 8px rgba(228, 31, 38, 0.10);
+}
+
+.highlight {
+    color: var(--color-primary);
+}
+
+.testimonialsCards {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 80px;
+}
+
+.card {
+    flex: 1;
+    background: linear-gradient(136.71deg, rgba(67, 67, 67, 0.86) -24.05%, rgba(0, 0, 0, 0) 115.5%);
+    backdrop-filter: blur(7.91175px);
+    border-radius: 12px;
+    box-shadow: 0 3px 16px 0 #1a202a19;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-width: 310px;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9; /* Adjust for strength */
+  background-image: url('../../assets/texture.png');
+  background-size: cover;    /* or 'contain' or a small fixed px size for more grain */
+  background-repeat: repeat; /* Make sure it tiles */
+  border-radius: inherit;
+  top:-10px;
+}
+
+.quoteMark {
+    font-size: 60px;
+    line-height: 10px;
+    color: var(--color-white);
+    opacity: 0.55;
+}
+
+.text {
+    font-size: 16px;
+    color: var(--color-white);
+    line-height: 1.5;
+    margin-bottom: 60px;
+    margin-top: 14px;
+    font-weight: 400;
+}
+
+.cardFooter {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0;
+}
+
+.name {
+    font-weight: 700;
+    color: var(--color-white);
+    font-size: 18px;
+}
+
+.title {
+    color: #ddd;
+    font-size: 16px;
+    margin-top: 2px;
+}

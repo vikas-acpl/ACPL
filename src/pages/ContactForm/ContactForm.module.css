@@ -1,0 +1,208 @@
+.contactForm {
+    margin-top: 140px;
+    background: radial-gradient(50% 320.24% at 50% 50%, #560E0E 0%, #2C0002 100%);
+}
+
+/* .contactForm {
+  background: radial-gradient(circle at 70% 10%, #671717 0%, #2b0707 100%);
+  padding: 0 0 64px 0;
+} */
+
+.contactFormContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 48px 32px;
+    gap: 250px;
+}
+
+.left {
+    flex: 0.4;
+    color: #fff;
+}
+
+.pretitle {
+    color: var(--color-primary);
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    font-size: 14px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.left h2 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-white);
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #fff2ee;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-bottom: 34px;
+}
+
+.detailRow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.icon {
+    height: 24px;
+}
+
+.label {
+    display: block;
+    color: var(--color-white);
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.email,
+.phone {
+    font-size: 16px;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.right {
+    flex: 0.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formHeader {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.formTitle {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.formSubTitle {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.form {
+    width: 100%;
+}
+
+.row2 {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 21px;
+}
+
+.fieldBox {
+    flex: 1;
+}
+
+.phoneRow {
+    display: flex;
+    gap: 12px;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--color-primary);
+    /* background: transparent; */
+    border-radius: 8px;
+    /* color: #fff; */
+    font-size: 16px;
+    margin-bottom: 0;
+    /* background: #2C0002; */
+}
+
+.input:focus-visible,
+.selectSmall:focus-visible,
+.textarea:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
+.input:focus,
+.input:active,
+.input option {
+    background-color: #530d0d;
+    color: #fff;
+}
+
+.input option {
+    background-color: #530d0d;
+    color: #fff;
+}
+
+.selectSmall {
+    /* width: 100%;
+    padding: 12px;
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 0; */
+}
+
+.selectSmall .react-select__control{
+    width: 100px !important;
+}
+
+/* .selectSmall:focus,
+.selectSmall:active,
+.selectSmall option {
+    background-color: #530d0d !important;
+    color: #fff;
+}
+
+.selectSmall option {
+    background-color: #530d0d !important;
+    color: #fff;
+}
+
+.selectSmall  */
+
+/* .selectSmall {
+  max-height: 240px;
+  overflow-y: auto;
+} */
+
+.textarea {
+    resize: vertical;
+}
+
+.error {
+    color: var(--color-primary) !important;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.actionBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+
+.submitBtn {
+    min-width: 140px;
+}
+
+.submitBtn:disabled {
+    background: #a87a7a;
+}

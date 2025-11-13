@@ -1,0 +1,207 @@
+.ourPartners {
+    margin-top: 140px;
+}
+
+.partnerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.partners {
+    width: 100%;
+}
+
+.partnerHeader {
+    text-align: center;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--color-white);
+    border-radius: 55px;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 12px;
+    box-shadow: 0 2px 8px rgba(228, 31, 38, 0.10);
+}
+
+.logoGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.partner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 110px;
+    min-width: 180px;
+    box-sizing: border-box;
+    border: none;
+    position: relative;
+    border: 1px solid rgba(228, 31, 38, 0.25);
+    position: relative;
+}
+
+.partner .background {
+    position: absolute;
+    opacity: 0.4;
+}
+
+.partner .partnerLogo {
+    max-width: 64px;
+    max-height: 48px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.partner h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-white);
+    text-align: center;
+}
+
+.box1 {
+    aspect-ratio: 1;
+    pointer-events: none;
+    height: 16%;
+    width: var(--framer-aspect-ratio-supported, 14px);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.box1::after {
+    content: "";
+    box-sizing: border-box;
+    border-radius: inherit;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-top: 1px solid var(--color-primary);
+    border-left: 1px solid var(--color-primary);
+}
+
+
+.box2 {
+    aspect-ratio: 1;
+    pointer-events: none;
+    height: 16%;
+    width: var(--framer-aspect-ratio-supported, 14px);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.box2::after {
+    content: "";
+    box-sizing: border-box;
+    border-radius: inherit;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-top: 1px solid var(--color-primary);
+    border-right: 1px solid var(--color-primary);
+}
+
+
+.box3 {
+    aspect-ratio: 1;
+    pointer-events: none;
+    height: 16%;
+    width: var(--framer-aspect-ratio-supported, 14px);
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.box3::after {
+    content: "";
+    box-sizing: border-box;
+    border-radius: inherit;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-bottom: 1px solid var(--color-primary);
+    border-left: 1px solid var(--color-primary);
+}
+
+
+.box4 {
+    aspect-ratio: 1;
+    pointer-events: none;
+    height: 16%;
+    width: var(--framer-aspect-ratio-supported, 14px);
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.box4::after {
+    content: "";
+    box-sizing: border-box;
+    border-radius: inherit;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-bottom: 1px solid var(--color-primary);
+    border-right: 1px solid var(--color-primary);
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    animation: ripple 0.6s linear infinite;
+}
+
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--color-primary-rgb), 0.1),
+                0 0 0 10px rgba(var(--color-primary-rgb), 0.1),
+                0 0 0 20px rgba(var(--color-primary-rgb), 0.1),
+                0 0 0 30px rgba(var(--color-primary-rgb), 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(var(--color-primary-rgb), 0.1),
+                0 0 0 20px rgba(var(--color-primary-rgb), 0.1),
+                0 0 0 30px rgba(var(--color-primary-rgb), 0.1),
+                0 0 0 40px rgba(var(--color-primary-rgb), 0);
+  }
+}
+
+
+.logo img {
+    height: 60px;
+}
+
+.linesBottom {
+    transform: scaleY(-1);
+}

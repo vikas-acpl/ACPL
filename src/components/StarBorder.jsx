@@ -1,5 +1,6 @@
 import './StarBorder.css';
 
+
 const StarBorder = ({
   as: Component = 'button',
   className = '',
@@ -36,5 +37,6 @@ const StarBorder = ({
     </Component>
   );
 };
+
 
 export default StarBorder;
