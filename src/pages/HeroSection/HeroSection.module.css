@@ -15,7 +15,7 @@
     padding-top: 120px;
 }
 
-/* .hero .background {
+.hero .background {
     position: absolute;
     top: 0;
     left: 0;
@@ -25,9 +25,9 @@
     filter: blur(250px);
     pointer-events: none;
     z-index: 0;
-} */
+}
 
-.hero .background {
+/* .hero .background {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(228, 31, 38, 0.3);
@@ -35,8 +35,7 @@
   filter: blur(250px);
   pointer-events: none;
   z-index: 0;
-  /* transform: translateZ(0); */
-}
+} */
 
 .content {
     max-width: 700px;
