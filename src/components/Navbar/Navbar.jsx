@@ -36,7 +36,7 @@ const Navbar = () => {
             </li>
           </ul>
           <div className={styles.ctaButton}>
-            <a href="#assessment" className="btn btn--primary">Contact Us</a>
+            <a href="#contact-form" className="btn btn--primary">Contact Us</a>
           </div>
           <button
             className={styles.menuToggle}

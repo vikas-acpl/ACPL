@@ -205,7 +205,7 @@ const options = countryCodes.map(({ code }) => ({ value: code, label: code }));
 
 const ContactForm = () => {
     return (
-        <section className={styles.contactForm}>
+        <section id="contact-form" className={styles.contactForm}>
             <div className={`container ${styles.contactFormContainer}`}>
                 <div className={styles.left}>
                     <div className={styles.pretitle}>We Are Here To Help You</div>

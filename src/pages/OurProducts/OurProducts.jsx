@@ -37,7 +37,7 @@ const OurProducts = () => {
             ],
             actionBtn: {
                 label: "Explore Klassify",
-                link: "#experts"
+                link: "https://klassify.io/"
             },
             features: [
                 "Auto-discover and tag scattered sensitive data across endpoints, servers, and cloud drives.",
@@ -60,7 +60,7 @@ const OurProducts = () => {
             ],
             actionBtn: {
                 label: "Explore Attackfence",
-                link: "#attackfence"
+                link: "https://www.attackfence.com/"
             },
             features: [
                 "Enriches SIEM/XDR with high-fidelity network telemetry to cut false positives.",
@@ -83,7 +83,7 @@ const OurProducts = () => {
             ],
             actionBtn: {
                 label: "Find Out More",
-                link: "#cvehub"
+                link: "#contact-form"
             },
             features: [
                 "Centralised CVE Hub – One unified dashboard to view all critical and high-severity vulnerabilities across every platform.",
@@ -191,7 +191,23 @@ const OurProducts = () => {
                                         ))}
                                     </div>
                                     <div className={styles.actionBtn}>
-                                        <a href={product.actionBtn.link} className="btn btn--primary">{product.actionBtn.label}</a>
+                                        {product.actionBtn.link.startsWith('http') ? (
+                                            <a
+                                                href={product.actionBtn.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="btn btn--primary"
+                                            >
+                                                {product.actionBtn.label}
+                                            </a>
+                                        ) : (
+                                            <a
+                                                href={product.actionBtn.link}
+                                                className="btn btn--primary"
+                                            >
+                                                {product.actionBtn.label}
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
                                 <hr className={styles.verticalLine} />
@@ -235,7 +251,23 @@ const OurProducts = () => {
                                             ))}
                                         </div>
                                         <div className={styles.actionBtn}>
-                                            <a href={product.actionBtn.link} className="btn btn--primary">{product.actionBtn.label}</a>
+                                            {product.actionBtn.link.startsWith('http') ? (
+                                                <a
+                                                    href={product.actionBtn.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="btn btn--primary"
+                                                >
+                                                    {product.actionBtn.label}
+                                                </a>
+                                            ) : (
+                                                <a
+                                                    href={product.actionBtn.link}
+                                                    className="btn btn--primary"
+                                                >
+                                                    {product.actionBtn.label}
+                                                </a>
+                                            )}
                                         </div>
                                     </div>
                                 </>) : (<>
@@ -249,7 +281,23 @@ const OurProducts = () => {
                                             ))}
                                         </div>
                                         <div className={styles.actionBtn}>
-                                            <a href={product.actionBtn.link} className="btn btn--primary">{product.actionBtn.label}</a>
+                                            {product.actionBtn.link.startsWith('http') ? (
+                                                <a
+                                                    href={product.actionBtn.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="btn btn--primary"
+                                                >
+                                                    {product.actionBtn.label}
+                                                </a>
+                                            ) : (
+                                                <a
+                                                    href={product.actionBtn.link}
+                                                    className="btn btn--primary"
+                                                >
+                                                    {product.actionBtn.label}
+                                                </a>
+                                            )}
                                         </div>
                                     </div>
                                     <hr className={styles.verticalLine} />

@@ -6,7 +6,7 @@ import Blog2 from '../../assets/Resources/Blog2.png'
 
 const Resources = () => {
     return (
-        <section className={styles.resources}>
+        <section id="resources" className={styles.resources}>
             <div className={`container ${styles.resourcesContainer}`}>
                 <div className={`sectionHeader ${styles.partnerHeader}`}>
                     <div className='badge'>

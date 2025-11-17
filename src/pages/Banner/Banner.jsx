@@ -13,7 +13,7 @@ const Banner = () => {
                         for Deeper Security Insights!!
                     </h2>
                     <div className={styles.actionBtn}>
-                        <a href="#experts" className="btn btn--primary">Request a Demo<img src={Arrow} alt="Right-Arrow" /></a>
+                        <a href="#contact-form" className="btn btn--primary">Request a Demo<img src={Arrow} alt="Right-Arrow" /></a>
                     </div>
                 </div>
             </div>

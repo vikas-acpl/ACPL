@@ -33,7 +33,7 @@ const HeroSection = () => {
                         />
                     </h1>
                     <div className={styles.actions}>
-                        <a href="#experts" className="btn btn--primary">Talk to Our Experts<img src={Arrow} alt="Right-Arrow" /></a>
+                        <a href="#contact-form" className="btn btn--primary">Talk to Our Experts<img src={Arrow} alt="Right-Arrow" /></a>
                         <a href="#resources" className="btn btn--secondary">
                             <img src={View} alt="View" />View Our Resources
                         </a>
