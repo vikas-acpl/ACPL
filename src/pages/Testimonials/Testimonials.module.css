@@ -8,16 +8,6 @@
     align-items: center;
 }
 
-/* .testimonials {
-  padding: 60px 0;
-  background: #f5f5f5;
-} */
-
-/* .testimonialsContainer {
-  max-width: 1220px;
-  margin: 0 auto;
-} */
-
 .partnerHeader {
     text-align: center;
 }
@@ -62,17 +52,20 @@
 }
 
 .card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.9; /* Adjust for strength */
-  background-image: url('../../assets/texture.png');
-  background-size: cover;    /* or 'contain' or a small fixed px size for more grain */
-  background-repeat: repeat; /* Make sure it tiles */
-  border-radius: inherit;
-  top:-10px;
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.9;
+    /* Adjust for strength */
+    background-image: url('../../assets/texture.png');
+    background-size: cover;
+    /* or 'contain' or a small fixed px size for more grain */
+    background-repeat: repeat;
+    /* Make sure it tiles */
+    border-radius: inherit;
+    top: -10px;
 }
 
 .quoteMark {
@@ -115,4 +108,54 @@
     color: #ddd;
     font-size: 16px;
     margin-top: 2px;
+}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 480px) {
+    .testimonials {
+        margin-top: 60px;
+    }
+
+    .testimonialsCards {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 10px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        width:100%;
+    }
+
+    .testimonialsCards::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        padding: 24px;
+        width:100%;
+    }
+
+    .quoteMark {
+        line-height: 10px;
+        margin-top: 10px;
+    }
+
+    .text {
+        font-size: 14px;
+        margin-bottom: 24px;
+        margin-top: 12px;
+    }
+
+    .name {
+        font-size: 14px;
+    }
+
+    .title {
+        font-size: 12px;
+    }
 }

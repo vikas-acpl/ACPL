@@ -252,7 +252,7 @@ const ContactForm = () => {
                             actions.resetForm();
                         }}
                     >
-                        {({ values, isSubmitting }) => (
+                        {({ values, isSubmitting, setFieldValue }) => (
                             <Form className={styles.form}>
                                 <div className={styles.row2}>
                                     <div className={styles.fieldBox}>
@@ -294,10 +294,10 @@ const ContactForm = () => {
                                                     }),
                                                     control: (provided, state) => ({
                                                         ...provided,
-                                                        width:"100px",
+                                                        width: "100px",
                                                         minHeight: "51px",
                                                         borderRadius: '8px',
-                                                        border:"2px solid #e41f26",
+                                                        border: "2px solid #e41f26",
                                                         color: '#fff',
                                                         background: 'transparent',
                                                         boxShadow: state.isFocused ? '0 0 0 1px #530d0d' : null,

@@ -5,9 +5,7 @@ import ManagedServices from '../../assets/svg/Managed-Services.svg'
 import Assessment from '../../assets/svg/Assessment.svg'
 import Implementation from '../../assets/svg/Implementation.svg'
 import HealthChecks from '../../assets/svg/Health-Checks.svg'
-// import ScrollStack, { ScrollStackItem } from '../../components/scroll/ScrollStack'
-// import { cn } from "../../lib/utils"
-import StackingCards, {StackingCardItem} from "../../components/fancy/blocks/StackingCards"
+import StackingCards, {StackingCardItem} from '../../components/StackingCards/StackingCards'
 
 const cards = [
     {
@@ -40,7 +38,6 @@ const cards = [
     },
 ];
 
-
 const Services = () => {
     return (
         <section id="services" className={styles.ourServices}>
@@ -59,57 +56,13 @@ const Services = () => {
                         </StarBorder>
                     </div>
                     <h2 className="sectionTitle">
-                        Precision-Engineered Cybersecurity
-                        <br />
-                        for Complex <span className={styles.highlight}>Environments</span>
+                        Precision-Engineered Cybersecurity<br className="responsive-br" /> for Complex <span className={styles.highlight}>Environments</span>
                     </h2>
                     <p className="sectionSubtitle">
-                        From architecture to managed services, we partner with enterprises to implement security
-                        <br />
-                        frameworks that deliver continuous visibility, resilience, and measurable business outcomes.
+                        From architecture to managed services, we partner with enterprises to implement security<br className="responsive-br" /> frameworks that deliver continuous visibility, resilience, and measurable business outcomes.
                     </p>
                 </div>
-                {/* <div className={styles.cards}>
-                    <ScrollStack>
-                        <ScrollStackItem key="one"><div><div className={styles.managedServiceCard}>
-                            <div className={styles.iconSection}>
-                                <img src={ManagedServices} className={styles.icon} />
-                            </div>
-                            <div className={styles.contentSection}>
-                                <p className={styles.number}>01</p>
-                                <h3 className={styles.title}>Managed Services</h3>
-                                <p className={styles.description}>
-                                    ACPL’s Managed Security Services provide 24×7 protection, monitoring, and optimization across networks, cloud, and endpoints—reducing risks, ensuring compliance, and maintaining resilient security with expert SOC support and measurable outcomes.
-                                </p>
-                            </div>
-                        </div></div></ScrollStackItem>
-                        <ScrollStackItem key="two"><div><div className={styles.managedServiceCard}>
-                            <div className={styles.iconSection}>
-                                <img src={ManagedServices} className={styles.icon} />
-                            </div>
-                            <div className={styles.contentSection}>
-                                <p className={styles.number}>01</p>
-                                <h3 className={styles.title}>Managed Services</h3>
-                                <p className={styles.description}>
-                                    ACPL’s Managed Security Services provide 24×7 protection, monitoring, and optimization across networks, cloud, and endpoints—reducing risks, ensuring compliance, and maintaining resilient security with expert SOC support and measurable outcomes.
-                                </p>
-                            </div>
-                        </div></div></ScrollStackItem>
-                        <ScrollStackItem key="three"><div><div className={styles.managedServiceCard}>
-                            <div className={styles.iconSection}>
-                                <img src={ManagedServices} className={styles.icon} />
-                            </div>
-                            <div className={styles.contentSection}>
-                                <p className={styles.number}>01</p>
-                                <h3 className={styles.title}>Managed Services</h3>
-                                <p className={styles.description}>
-                                    ACPL’s Managed Security Services provide 24×7 protection, monitoring, and optimization across networks, cloud, and endpoints—reducing risks, ensuring compliance, and maintaining resilient security with expert SOC support and measurable outcomes.
-                                </p>
-                            </div>
-                        </div></div></ScrollStackItem>
-                    </ScrollStack>
-                </div> */}
-                <StackingCards totalCards={cards.length} scaleMultiplier={0.018}>
+                <StackingCards totalCards={cards.length} scaleMultiplier={0.07}>
                     {cards.map((card, idx) => (
                         <StackingCardItem key={idx} index={idx}
                             topPosition={`${3 + idx * 2}%`} >

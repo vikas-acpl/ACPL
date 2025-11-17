@@ -9,7 +9,7 @@ const Banner = () => {
                 <div className={styles.partnerHeader}>
                     <h2 className={`sectionTitle ${styles.headingTitle}`}>
                         Ready to Leverage ACPL’s IP Platforms
-                        <br />
+                        <br className="responsive-br" />
                         for Deeper Security Insights!!
                     </h2>
                     <div className={styles.actionBtn}>

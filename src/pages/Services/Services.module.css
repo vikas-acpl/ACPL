@@ -97,7 +97,42 @@
     max-width: 560px;
 }
 
-/* .cards {
-    padding-top: 0;
-    margin-top: 0;
-} */
+@media (max-width: 768px) {}
+
+
+@media (max-width: 480px) {
+
+    .ourServices {
+        margin-top: 60px;
+    }
+
+    .badge {
+        gap: 8px;
+        padding: 8px 12px;
+        font-size: 10px;
+    }
+
+    .managedServiceCard {
+        padding: 20px;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .icon {
+        width: 100px;
+    }
+
+    .number {
+        font-size: 60px;
+        line-height: 1;
+    }
+
+    .title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+}

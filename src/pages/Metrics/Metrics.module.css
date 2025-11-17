@@ -1,4 +1,4 @@
-.metrics{
+.metrics {
     margin-top: 60px;
 }
 
@@ -45,6 +45,7 @@
     font-size: 14px;
     color: white;
     font-weight: 500;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -55,7 +56,7 @@
     }
 
     .statIcon {
-        width: 52px;
+         height: 30px;
     }
 
     .statNumber {
@@ -68,6 +69,11 @@
 }
 
 @media (max-width: 480px) {
+
+    .metrics {
+        margin-top: 20px;
+    }
+
     .statsGrid {
         grid-template-columns: 1fr 1fr;
         gap: 16px;
@@ -75,7 +81,7 @@
     }
 
     .statIcon {
-        width: 40px;
+        height: 24px;
     }
 
     .statNumber {
@@ -87,7 +93,7 @@
     }
 
     .card {
-        padding: 20px;
+        padding: 20px 12px;
     }
 
 

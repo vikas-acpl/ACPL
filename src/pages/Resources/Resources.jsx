@@ -26,7 +26,7 @@ const Resources = () => {
                     </h2>
                     <p className="sectionSubtitle">
                         Explore ACPL’s expert-led whitepapers, reports, and playbooks designed to help CISOs,
-                        <br />
+                        <br className="responsive-br" />
                         CIOs, and security leaders make informed, strategic decisions in a complex threat landscape.
                     </p>
                 </div>

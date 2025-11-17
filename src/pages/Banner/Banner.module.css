@@ -13,3 +13,12 @@
 .headingTitle {
     text-align: center;
 }
+
+@media (max-width: 768px) {}
+
+@media (max-width: 480px) {
+    .Banner {
+        padding: 60px 0;
+        margin-top: 60px;
+    }
+}

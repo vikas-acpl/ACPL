@@ -1,6 +1,7 @@
 import createGlobe from "cobe";
 import { useSpring, animated } from '@react-spring/web';
 import { useEffect, useRef } from 'react';
+import styles from './Globe.module.css'
 
 const Globe = () => {
     const canvasRef = useRef();
@@ -15,6 +16,9 @@ const Globe = () => {
 
     useEffect(() => {
         let animationFrameId;
+        if (!canvasRef.current) return;
+        const width = canvasRef.current.clientWidth * 2;  // devicePixelRatio = 2
+        const height = canvasRef.current.clientHeight * 2;
         const animate = () => {
             if (!pointerInteracting.current) {
                 basePhi.current += 0.003; // Auto-rotate speed
@@ -27,8 +31,8 @@ const Globe = () => {
 
         const globe = createGlobe(canvasRef.current, {
             devicePixelRatio: 2,
-            width: 500 * 2,
-            height: 500 * 2,
+            width,
+            height,
             phi: basePhi.current,
             theta: 0,
             dark: 0.8,
@@ -51,24 +55,56 @@ const Globe = () => {
     }, [api, phi]);
 
 
-    const onPointerDown = (e) => {
-        pointerInteracting.current = true;
-        lastX.current = e.clientX || (e.touches && e.touches[0].clientX);
-        dragOffset.current = 0;
-        if (canvasRef.current) canvasRef.current.style.cursor = 'grabbing';
-    };
+    // const onPointerDown = (e) => {
+    //     pointerInteracting.current = true;
+    //     lastX.current = e.clientX || (e.touches && e.touches[0].clientX);
+    //     dragOffset.current = 0;
+    //     if (canvasRef.current) canvasRef.current.style.cursor = 'grabbing';
+    // };
+
+    // const onPointerMove = (e) => {
+    //     if (!pointerInteracting.current) return;
+    //     const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+    //     const deltaX = clientX - lastX.current;
+    //     lastX.current = clientX;
+
+    //     // Accumulate drag offset scaled for sensitivity
+    //     dragOffset.current += deltaX * 0.005;
+
+    //     // Immediately update spring phi for responsive dragging
+    //     api.start({ phi: basePhi.current + dragOffset.current, immediate: true });
+    // };
 
     const onPointerMove = (e) => {
         if (!pointerInteracting.current) return;
+
         const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+        const clientY = e.clientY || (e.touches && e.touches[0].clientY);
         const deltaX = clientX - lastX.current;
         lastX.current = clientX;
 
         // Accumulate drag offset scaled for sensitivity
         dragOffset.current += deltaX * 0.005;
 
-        // Immediately update spring phi for responsive dragging
+        // Prevent vertical scroll only if significant horizontal movement
+        if (Math.abs(deltaX) > Math.abs(clientY - lastY.current || 0)) {
+            e.preventDefault();
+        }
+
+        lastY.current = clientY;
+
+        // Update globe rotation immediately
         api.start({ phi: basePhi.current + dragOffset.current, immediate: true });
+    };
+
+    const lastY = useRef(0);
+
+    const onPointerDown = (e) => {
+        pointerInteracting.current = true;
+        lastX.current = e.clientX || (e.touches && e.touches[0].clientX);
+        lastY.current = e.clientY || (e.touches && e.touches[0].clientY);
+        dragOffset.current = 0;
+        if (canvasRef.current) canvasRef.current.style.cursor = 'grabbing';
     };
 
     const onPointerUpOrLeave = () => {
@@ -86,7 +122,7 @@ const Globe = () => {
         <>
             <canvas
                 ref={canvasRef}
-                style={{ width: 500, height: 500, maxWidth: "100%", aspectRatio: 1, cursor: 'grab' }}
+                className={styles.canvas}
                 onPointerDown={onPointerDown}
                 onPointerMove={onPointerMove}
                 onPointerUp={onPointerUpOrLeave}

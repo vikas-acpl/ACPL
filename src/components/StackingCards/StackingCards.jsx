@@ -10,6 +10,7 @@ import {
 } from "motion/react"
 
 import { cn } from "@/lib/utils"
+import styles from './StackingCards.module.css';
 
 export default function StackingCards({
   children,
@@ -55,10 +56,10 @@ const StackingCardItem = ({
   const top = topPosition ?? `${5 + index * 3}%`
 
   return (
-    <div className={cn("h-full sticky top-0", className)} {...props}>
+    <div className={cn(`h-full sticky`, styles.stickyTop50, className)} {...props}>
       <motion.div
-        className={"origin-top relative h-full"}
-        style={{ top, scale, marginBottom: "60px" }}
+        className={`origin-top relative h-full ${styles.stickyCard}`}
+        style={{ top, scale }}
       >
         {children}
       </motion.div>

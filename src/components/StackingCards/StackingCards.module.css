@@ -1,0 +1,18 @@
+.stickyTop50 {
+    position: sticky;
+    top: 50px;
+}
+
+.stickyCard{
+    margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+    .stickyTop50 {
+        top: 60px;
+    }
+
+    .stickyCard{
+    margin-bottom: 40px;
+}
+}

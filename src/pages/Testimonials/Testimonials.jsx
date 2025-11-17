@@ -60,7 +60,7 @@ const Testimonials = () => {
                     </h2>
                     <p className="sectionSubtitle">
                         Our customers speak for us — read how ACPL’s end-to-end cybersecurity services deliver
-                        <br />
+                        <br className="responsive-br" />
                         value, protection, and trust across industries and geographies.
                     </p>
                 </div>

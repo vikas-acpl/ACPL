@@ -64,6 +64,11 @@
     font-size: 23px;
     font-weight: 600;
     line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .description {
@@ -84,16 +89,6 @@
     min-width: 350px;
 }
 
-/* .card {
-    background-color: #2f0000;
-    border: 1px solid #720004;
-    border-radius: 12px;
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    gap:24px;
-} */
-
 .card {
     background-color: #2f0000;
     border: 1px solid #720004;
@@ -105,7 +100,7 @@
     align-items: flex-start;
 }
 
-.card > div:first-child {
+.card>div:first-child {
     width: 149px;
     flex-shrink: 0;
     display: flex;
@@ -120,18 +115,11 @@
     border-radius: 10px;
     display: block;
 }
-/* 
-.card img {
-    height: 80px;
-    width: 110px;
-    object-fit: cover;
-    border-radius: 10px;
-} */
 
 .card h4 {
-   font-size: 18px;
-  font-weight: 600;
-  line-height: 1.5;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
 }
 
 .card .readTime {
@@ -141,4 +129,48 @@
 .card .dateText {
     margin: 0;
     font-size: 16px;
+}
+
+
+@media (max-width: 768px) {}
+
+
+@media (max-width: 480px) {
+    .resources {
+        margin-top: 60px;
+    }
+
+    .readTime {
+        font-size: 10px;
+    }
+
+    .cardTitle {
+        font-size: 14px;
+        -webkit-line-clamp: 2;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+
+    .card>div:first-child {
+        width: 120px;
+    }
+
+    .card h4 {
+        font-size: 14px;
+    }
+
+    .card .dateText {
+        font-size: 12px;
+    }
+
+    .resourcesCard {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .dateText {
+        font-size: 12px;
+    }
 }

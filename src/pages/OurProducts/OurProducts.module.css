@@ -46,16 +46,6 @@
   align-items: center;
 }
 
-
-/* .centerText {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-} */
-
 .centerText {
   position: absolute;
   left: 50%;
@@ -68,19 +58,16 @@
   font-size: 32px;
   font-weight: 700;
   line-height: 1.2;
-  /* color: white; */
   margin-bottom: 20px;
 }
 
 .sectionSubtitle {
   font-size: 16px;
-  /* color: #fff; */
   line-height: 1.5;
   margin-bottom: 0;
 }
 
 .products {
-  /* margin-top: -100px; */
   background: #570000;
   z-index: 4;
   position: relative;
@@ -89,8 +76,6 @@
 .productsContainer {
   display: flex;
   flex-direction: column;
-  /* gap: 140px;
-  padding-bottom: 140px; */
 }
 
 .productRow {
@@ -105,8 +90,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* min-width: 430px;
-  max-width: 590px; */
 }
 
 .productsTitle {
@@ -151,15 +134,12 @@
   display: flex;
   flex-direction: column;
   gap: 22px;
-  /* min-width: 340px;
-  max-width: 375px; */
 }
 
 
 .partner {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
   min-height: 100px;
   min-width: 180px;
@@ -174,13 +154,6 @@
   position: absolute;
   opacity: 0.4;
 }
-
-/* .partner .partnerLogo {
-    max-width: 64px;
-    max-height: 48px;
-    object-fit: contain;
-    margin-bottom: 10px;
-} */
 
 .partner p {
   padding: 0 20px;
@@ -295,4 +268,72 @@
   width: 0;
   margin: 0 28px;
   flex-shrink: 0;
+}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 480px) {
+  .ourProducts {
+    margin-top: 60px;
+  }
+
+  .sectionTitle {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .sectionSubtitle {
+    font-size: 14px;
+  }
+
+
+  .panelContainer {
+    /* height: 30vh; */
+    min-height: 620px;
+  }
+
+  .productRow {
+    margin-bottom: 60px;
+    gap: 24px;
+    flex-direction: column;
+    /* text-align: center; */
+  }
+
+  .left {
+    align-items: center;
+  }
+
+  .productsTitle {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .productsDesc {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .productsImage {
+    margin: 24px 0;
+  }
+
+  .productsTags {
+    margin-bottom: 24px;
+    gap: 8px;
+  }
+
+  .productsTags span {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .partner {
+    min-height: 60px;
+  }
+
+  .partner p {
+    padding: 0 10px;
+    font-size: 12px;
+    text-align: center;
+  }
 }

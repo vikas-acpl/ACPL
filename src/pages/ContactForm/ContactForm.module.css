@@ -3,11 +3,6 @@
     background: radial-gradient(50% 320.24% at 50% 50%, #560E0E 0%, #2C0002 100%);
 }
 
-/* .contactForm {
-  background: radial-gradient(circle at 70% 10%, #671717 0%, #2b0707 100%);
-  padding: 0 0 64px 0;
-} */
-
 .contactFormContainer {
     display: flex;
     justify-content: space-between;
@@ -52,6 +47,11 @@
     align-items: center;
     gap: 14px;
     margin-bottom: 14px;
+}
+
+.contactDetails {
+    display: flex;
+    flex-direction: column;
 }
 
 .icon {
@@ -122,12 +122,22 @@
     width: 100%;
     padding: 12px;
     border: 2px solid var(--color-primary);
-    /* background: transparent; */
     border-radius: 8px;
-    /* color: #fff; */
     font-size: 16px;
     margin-bottom: 0;
-    /* background: #2C0002; */
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+select {
+    background-image: url('../../assets/svg/downArrow.svg');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px 16px;
 }
 
 .input:focus-visible,
@@ -149,37 +159,9 @@
     color: #fff;
 }
 
-.selectSmall {
-    /* width: 100%;
-    padding: 12px;
-    border: 2px solid var(--color-primary);
-    border-radius: 8px;
-    font-size: 16px;
-    margin-bottom: 0; */
-}
-
-.selectSmall .react-select__control{
+.selectSmall .react-select__control {
     width: 100px !important;
 }
-
-/* .selectSmall:focus,
-.selectSmall:active,
-.selectSmall option {
-    background-color: #530d0d !important;
-    color: #fff;
-}
-
-.selectSmall option {
-    background-color: #530d0d !important;
-    color: #fff;
-}
-
-.selectSmall  */
-
-/* .selectSmall {
-  max-height: 240px;
-  overflow-y: auto;
-} */
 
 .textarea {
     resize: vertical;
@@ -205,4 +187,60 @@
 
 .submitBtn:disabled {
     background: #a87a7a;
+}
+
+@media (max-width: 768px) {}
+
+
+@media (max-width: 480px) {
+    .contactForm {
+        margin-top: 60px;
+    }
+
+    .contactFormContainer {
+        flex-direction: column;
+        padding: 60px 12px;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .pretitle {
+        font-size: 12px;
+    }
+
+    .left {
+        flex: 1;
+    }
+
+    .right {
+        flex: 1;
+        width: 100%;
+    }
+
+    .left h2 {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .contactDetails {
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    .formTitle {
+        font-size: 24px;
+    }
+
+    .formSubTitle {
+        font-size: 14px;
+    }
+
+    .row2 {
+        flex-direction: column;
+    }
 }

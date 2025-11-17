@@ -7,7 +7,22 @@ import Attackfence from '../../assets/products/Attackfence.png'
 import Cvehub from '../../assets/products/Cvehub.png'
 import Points from '../../assets/points1.png'
 
+function useIsMobile(breakpoint = 768) {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= breakpoint);
+    useEffect(() => {
+        function handleResize() {
+            setIsMobile(window.innerWidth <= breakpoint);
+        }
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [breakpoint]);
+    return isMobile;
+}
+
 const OurProducts = () => {
+
+    const isMobile = useIsMobile(768);
+
     const products = [
         {
             productsTitle: "Klassify — Data Knows Its Place",
@@ -80,8 +95,6 @@ const OurProducts = () => {
 
     const sectionRef = useRef(null);
     const clampedScroll = useMotionValue(0);
-
-    // Attach scroll progress to this section only
     const { scrollYProgress } = useScroll({
         target: sectionRef,
         offset: ["start end", "end start"],
@@ -93,25 +106,12 @@ const OurProducts = () => {
         ['20%', '32%', '44%', '56%', '68%', '70%']
     );
 
-    // const smoothCenterTextTop = useSpring(centerTextTop, {
-    //     stiffness: 60,
-    //     damping: 10,
-    // });
-
-    // const centerTextTop = useTransform(
-    //     clampedScroll,
-    //     [0, 0.3, 0.5, 0.75, 1],
-    //     ['30%', '35%', '50%', '60%', '90%']
-    // );
-
-    // Panels move from 0vw (open) to 50vw (closed in center)
     const panelWidth = useTransform(scrollYProgress, [0, 1], ['0vw', '100vw']);
 
-    // Text color: white to black based on scroll progress
     const textColor = useTransform(scrollYProgress, [0.25, 0.45, 0.5], ['#5c5c5c', '#bbb', '#fff'])
     useEffect(() => {
         const unsubscribe = scrollYProgress.onChange(latest => {
-            clampedScroll.set(Math.min(latest, 0.9)); // clamp to 0.9 max
+            clampedScroll.set(Math.min(latest, 0.9));
         });
         return () => unsubscribe();
     }, [scrollYProgress, clampedScroll]);
@@ -168,7 +168,7 @@ const OurProducts = () => {
                                 </h2>
                                 <p className={styles.sectionSubtitle}>
                                     From data classification to network defense, ACPL’s product suite ensures visibility,
-                                    <br />
+                                    <br className="responsive-br" />
                                     compliance, and control across hybrid, cloud, and on-prem environments.
                                 </p>
                             </div>
@@ -180,36 +180,7 @@ const OurProducts = () => {
                 <div className={`container ${styles.productsContainer}`}>
                     {products.map((product, idx) => (
                         <div className={styles.productRow} key={product.productsTitle}>
-                            {idx % 2 === 1 ? (<>
-                                <div className={styles.right}>
-                                    {product.features.map((feature, fIdx) => (
-                                        <div className={styles.partner} key={fIdx}>
-                                            <div className={styles.box1}></div>
-                                            <div className={styles.box2}></div>
-                                            <div className={styles.box3}></div>
-                                            <div className={styles.box4}></div>
-                                            <div className={styles.background}>
-                                                <img src={Points} alt="points" />
-                                            </div>
-                                            <p>{feature}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                                <hr className={styles.verticalLine} />
-                                <div className={styles.left}>
-                                    <h3 className={styles.productsTitle}>{product.productsTitle}</h3>
-                                    <p className={styles.productsDesc}>{product.productsDesc}</p>
-                                    <img src={product.img} alt={product.productsTitle} className={styles.productsImage} />
-                                    <div className={styles.productsTags}>
-                                        {product.productsTags.map(tag => (
-                                            <span key={tag}>{tag}</span>
-                                        ))}
-                                    </div>
-                                    <div className={styles.actionBtn}>
-                                        <a href={product.actionBtn.link} className="btn btn--primary">{product.actionBtn.label}</a>
-                                    </div>
-                                </div>
-                            </>) : (<>
+                            {isMobile ? (<>
                                 <div className={styles.left}>
                                     <h3 className={styles.productsTitle}>{product.productsTitle}</h3>
                                     <p className={styles.productsDesc}>{product.productsDesc}</p>
@@ -237,8 +208,67 @@ const OurProducts = () => {
                                             <p>{feature}</p>
                                         </div>
                                     ))}
-                                </div>
-                            </>)}
+                                </div></>) : (
+                                idx % 2 === 1 ? (<>
+                                    <div className={styles.right}>
+                                        {product.features.map((feature, fIdx) => (
+                                            <div className={styles.partner} key={fIdx}>
+                                                <div className={styles.box1}></div>
+                                                <div className={styles.box2}></div>
+                                                <div className={styles.box3}></div>
+                                                <div className={styles.box4}></div>
+                                                <div className={styles.background}>
+                                                    <img src={Points} alt="points" />
+                                                </div>
+                                                <p>{feature}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <hr className={styles.verticalLine} />
+                                    <div className={styles.left}>
+                                        <h3 className={styles.productsTitle}>{product.productsTitle}</h3>
+                                        <p className={styles.productsDesc}>{product.productsDesc}</p>
+                                        <img src={product.img} alt={product.productsTitle} className={styles.productsImage} />
+                                        <div className={styles.productsTags}>
+                                            {product.productsTags.map(tag => (
+                                                <span key={tag}>{tag}</span>
+                                            ))}
+                                        </div>
+                                        <div className={styles.actionBtn}>
+                                            <a href={product.actionBtn.link} className="btn btn--primary">{product.actionBtn.label}</a>
+                                        </div>
+                                    </div>
+                                </>) : (<>
+                                    <div className={styles.left}>
+                                        <h3 className={styles.productsTitle}>{product.productsTitle}</h3>
+                                        <p className={styles.productsDesc}>{product.productsDesc}</p>
+                                        <img src={product.img} alt={product.productsTitle} className={styles.productsImage} />
+                                        <div className={styles.productsTags}>
+                                            {product.productsTags.map(tag => (
+                                                <span key={tag}>{tag}</span>
+                                            ))}
+                                        </div>
+                                        <div className={styles.actionBtn}>
+                                            <a href={product.actionBtn.link} className="btn btn--primary">{product.actionBtn.label}</a>
+                                        </div>
+                                    </div>
+                                    <hr className={styles.verticalLine} />
+                                    <div className={styles.right}>
+                                        {product.features.map((feature, fIdx) => (
+                                            <div className={styles.partner} key={fIdx}>
+                                                <div className={styles.box1}></div>
+                                                <div className={styles.box2}></div>
+                                                <div className={styles.box3}></div>
+                                                <div className={styles.box4}></div>
+                                                <div className={styles.background}>
+                                                    <img src={Points} alt="points" />
+                                                </div>
+                                                <p>{feature}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </>)
+                            )}
                         </div>
                     ))}
                 </div>

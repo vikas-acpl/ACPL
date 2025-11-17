@@ -1,8 +1,23 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+
+function useResponsiveHeight(desktop = 200, mobile = 180, breakpoint = 768) {
+  const [height, setHeight] = useState(window.innerWidth > breakpoint ? desktop : mobile);
+
+  useEffect(() => {
+    function handleResize() {
+      setHeight(window.innerWidth > breakpoint ? desktop : mobile);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [desktop, mobile, breakpoint]);
+
+  return height;
+}
 
 export default function LinesBottom() {
   const width = 1000;
-  const height = 200;
+  const height = useResponsiveHeight(200, 120, 768);
   const count = 6;
 
   return (
@@ -31,12 +46,12 @@ export default function LinesBottom() {
           <motion.stop
             stopColor="rgba(0,0,0,0.5)"
             animate={{ offset: ["100%", "-150%"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5}}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
           />
           <motion.stop
             stopColor="transparent"
             animate={{ offset: ["-20%", "100%"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5}}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
           />
           <motion.stop
             stopColor="#e41f26"
@@ -51,8 +66,8 @@ export default function LinesBottom() {
         </linearGradient>
       </defs>
       <g mask="url(#curveMask1)">
-        <rect x="0" y="0" width={width} height={height} fill="#262626" />
-        <rect x="0" y="0" width={width} height={height} fill="url(#gradient1)" />
+        <rect x="0" y="0" width={width} height="200" fill="#262626" />
+        <rect x="0" y="0" width={width} height="200" fill="url(#gradient1)" />
       </g>
     </svg>
   );

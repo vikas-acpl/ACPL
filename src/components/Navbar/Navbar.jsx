@@ -51,8 +51,8 @@ const Navbar = () => {
           </button>
           <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
             <ul className={styles.mobileNavLinks}>
-              <li><a href="#about" onClick={closeMenu}>About Us</a></li>
               <li><a href="#services" onClick={closeMenu}>Services</a></li>
+              <li><a href="#products" onClick={closeMenu}>Products</a></li>
               <li>
                 <a
                   href="https://acpl.com/"
