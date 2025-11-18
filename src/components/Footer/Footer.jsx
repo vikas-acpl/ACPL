@@ -13,7 +13,8 @@ const Footer = () => {
                 <nav className={styles.footerLinks}>
                     <a href="#services" className={styles.footerLink}>Services</a>
                     <a href="#products" className={styles.footerLink}>Products</a>
-                    <a href="https://acpl.com/" className={styles.footerLink}>About ACPL</a>
+                    <a href="https://acpl.com/" target="_blank"
+                        rel="noopener noreferrer" className={styles.footerLink}>About ACPL</a>
                 </nav>
                 <div className={styles.social}>
                     <a
