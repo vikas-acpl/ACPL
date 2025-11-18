@@ -195,13 +195,13 @@ select {
 
 @media (max-width: 768px) {
 
-     .contactFormContainer {
+    .contactFormContainer {
         gap: 40px;
         padding: 60px 18px;
-        
+
     }
 
-     .pretitle {
+    .pretitle {
         font-size: 14px;
     }
 
@@ -214,12 +214,12 @@ select {
         width: 100%;
     }
 
-     .left h2 {
+    .left h2 {
         font-size: 30px;
         margin-bottom: 12px;
     }
 
-     .subtitle {
+    .subtitle {
         font-size: 14px;
         margin-bottom: 24px;
     }
@@ -232,7 +232,7 @@ select {
         font-size: 14px;
     }
 
-     .row2 {
+    .row2 {
         flex-direction: column;
     }
 
@@ -258,6 +258,7 @@ select {
 
     .left {
         flex: 1;
+        text-align: center;
     }
 
     .right {
@@ -275,9 +276,14 @@ select {
         margin-bottom: 24px;
     }
 
+    .Lables{
+        text-align: left;
+    }
+
     .contactDetails {
         flex-direction: row;
-        gap: 24px;
+        flex-direction: row;
+        justify-content: space-around;
     }
 
     .formTitle {

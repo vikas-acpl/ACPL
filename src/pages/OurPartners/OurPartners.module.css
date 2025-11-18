@@ -177,7 +177,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px auto;
+    /* margin: 20px auto; */
     animation: ripple 0.6s linear infinite;
 }
 
@@ -244,6 +244,7 @@
 
     .lines {
         margin-top: -38px;
+        padding: 0 10px;
     }
 
     .logo {
@@ -259,6 +260,7 @@
 
     .linesBottom{
         margin-bottom: -38px;
+        padding: 0 10px;
     }
 
 }

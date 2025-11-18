@@ -60,7 +60,7 @@ const Testimonials = () => {
                 slides: { perView: 3, spacing: 20 },
             },
         },
-        slides: { perView: 1 },
+        slides: { perView: 1, spacing: 20 },
     });
 
 

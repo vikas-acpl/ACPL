@@ -1,7 +1,6 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+/* @import "tw-animate-css"; */
 
-@custom-variant dark (&:is(.dark *));
 
 :root {
   --color-primary: #e41f26;
@@ -22,9 +21,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
 #services {
   scroll-margin-top: 300px;

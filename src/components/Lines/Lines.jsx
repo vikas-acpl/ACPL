@@ -1,23 +1,24 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-function useResponsiveHeight(desktop = 200, mobile = 180, breakpoint = 768) {
-  const [height, setHeight] = useState(window.innerWidth > breakpoint ? desktop : mobile);
+function useResponsiveValue(desktopValue, mobileValue, breakpoint = 768) {
+  const [value, setValue] = useState(window.innerWidth > breakpoint ? desktopValue : mobileValue);
 
   useEffect(() => {
     function handleResize() {
-      setHeight(window.innerWidth > breakpoint ? desktop : mobile);
+      setValue(window.innerWidth > breakpoint ? desktopValue : mobileValue);
     }
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [desktop, mobile, breakpoint]);
+  }, [desktopValue, mobileValue, breakpoint]);
 
-  return height;
+  return value;
 }
 
 export default function Lines() {
   const width = 1000;
-  const height = useResponsiveHeight(200, 120, 768);
+  const height = useResponsiveValue(200, 120, 768);
+  const strokeWidth = useResponsiveValue(2, 4, 768); 
   const count = 6;
 
   return (
@@ -36,7 +37,7 @@ export default function Lines() {
                 key={i}
                 d={`M${x},0 C${x},150 ${width / 2},75 ${width / 2},200`}
                 stroke="white"
-                strokeWidth="2"
+                strokeWidth={strokeWidth}
                 fill="none"
               />
             );
@@ -70,7 +71,7 @@ export default function Lines() {
         </linearGradient>
       </defs>
       <g mask="url(#curveMask)">
-        <rect x="0" y="0" width={width} height="200" fill="#262626" />
+        <rect x="0" y="0" width={width} height="200" fill="#626262" />
         <rect x="0" y="0" width={width} height="200" fill="url(#gradient)" />
       </g>
     </svg>

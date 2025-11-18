@@ -64,7 +64,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
-                <a href="#assessment" className="btn btn--primary" onClick={closeMenu}>
+                <a href="#contact-form" className="btn btn--primary" onClick={closeMenu}>
                   Contact Us
                 </a>
               </li>

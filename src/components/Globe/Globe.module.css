@@ -10,8 +10,8 @@
 /* Tablet view */
 @media (max-width: 768px) {
   .canvas {
-    width: 400px; /* Adjust size for tablet */
-    height: 400px;
+    width: 360px; /* Adjust size for tablet */
+    height: 360px;
   }
 }
 
