@@ -97,7 +97,21 @@
     max-width: 560px;
 }
 
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+
+    .managedServiceCard {
+        padding: 40px;
+    }
+
+     .icon {
+        width: 120px;
+    }
+
+     .number {
+        font-size: 80px;
+        line-height: 1;
+    }
+}
 
 
 @media (max-width: 480px) {

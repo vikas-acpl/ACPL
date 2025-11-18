@@ -270,7 +270,47 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+
+  .productRow {
+    margin-bottom: 60px;
+    gap: 0;
+
+  }
+
+  .productsTitle {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .productsDesc {
+    font-size: 16px;
+  }
+
+  .productsImage {
+    width: 360px;
+    margin: 24px 0;
+  }
+
+  .productsTags {
+    margin-bottom: 24px;
+    gap: 8px;
+  }
+
+   .productsTags span {
+    font-size: 12px;
+  }
+
+   .partner {
+    min-height: 80px;
+  }
+
+  .partner p {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+}
 
 @media (max-width: 480px) {
   .ourProducts {

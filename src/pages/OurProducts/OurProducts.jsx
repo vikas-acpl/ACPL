@@ -21,7 +21,7 @@ function useIsMobile(breakpoint = 768) {
 
 const OurProducts = () => {
 
-    const isMobile = useIsMobile(768);
+    const isMobile = useIsMobile(480);
 
     const products = [
         {

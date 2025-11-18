@@ -132,7 +132,40 @@
 }
 
 
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+
+    .mainCard img {
+    width: 100%;
+    height: 216px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+    .resourcesCard {
+        gap: 24px;
+    }
+
+    .readTime {
+        font-size: 12px;
+    }
+
+     .cardTitle {
+        font-size: 20px;
+        -webkit-line-clamp: 1;
+    }
+
+     .description {
+        font-size: 14px;
+    }
+
+     .card .dateText {
+        font-size: 12px;
+    }
+
+    .dateText {
+        font-size: 12px;
+    }
+}
 
 
 @media (max-width: 480px) {

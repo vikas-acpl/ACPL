@@ -54,7 +54,7 @@ const Testimonials = () => {
         loop: true,
         breakpoints: {
             "(min-width: 400px)": {
-                slides: { perView: 2, spacing: 5 },
+                slides: { perView: 2, spacing: 20 },
             },
             "(min-width: 1000px)": {
                 slides: { perView: 3, spacing: 20 },
