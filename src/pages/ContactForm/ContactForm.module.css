@@ -186,7 +186,11 @@ select {
 }
 
 .submitBtn:disabled {
-    background: #a87a7a;
+    background: #870000;
+    border: none;
+    transition: none;
+    transform: none;
+    box-shadow: none;
 }
 
 @media (max-width: 768px) {}

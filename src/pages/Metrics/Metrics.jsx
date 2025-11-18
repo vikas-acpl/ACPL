@@ -3,6 +3,7 @@ import Partners from '../../assets/svg/Partners.svg'
 import Certificates from '../../assets/svg/Certificates.svg'
 import Engineers from '../../assets/svg/Engineers.svg'
 import Clients from '../../assets/svg/Clients.svg'
+import CountUp from '../../components/CountUp'
 
 
 const Metrics = () => {
@@ -16,7 +17,17 @@ const Metrics = () => {
                             alt="Partners"
                             className={styles.statIcon}
                         />
-                        <h3 className={styles.statNumber}>1M+</h3>
+                        <h3 className={styles.statNumber}>
+                            <CountUp
+                                from={0}
+                                to={1000000}
+                                separator=","
+                                direction="up"
+                                duration={1}
+                                className={`count-up-text ${styles.statNumber}`}
+
+                            />+
+                        </h3>
                         <p className={styles.statLabel}>Professional Services Hours</p>
                     </div>
 
@@ -26,7 +37,18 @@ const Metrics = () => {
                             alt="Certificates"
                             className={styles.statIcon}
                         />
-                        <h3 className={styles.statNumber}>2100+</h3>
+                        <h3 className={styles.statNumber}>
+                            <CountUp
+                                from={0}
+                                to={2100}
+                                separator=","
+                                direction="up"
+                                duration={2}
+                                className={`count-up-text ${styles.statNumber}`}
+
+                            />
+                            +
+                        </h3>
                         <p className={styles.statLabel}>Industry Certifications</p>
                     </div>
 
@@ -36,7 +58,18 @@ const Metrics = () => {
                             alt="Engineers"
                             className={styles.statIcon}
                         />
-                        <h3 className={styles.statNumber}>350+</h3>
+                        <h3 className={styles.statNumber}>
+                            <CountUp
+                                from={0}
+                                to={350}
+                                separator=","
+                                direction="up"
+                                duration={2}
+                                className={`count-up-text ${styles.statNumber}`}
+
+                            />
+                            +
+                        </h3>
                         <p className={styles.statLabel}>Certified Engineers</p>
                     </div>
 
@@ -46,7 +79,20 @@ const Metrics = () => {
                             alt="Clients"
                             className={styles.statIcon}
                         />
-                        <h3 className={styles.statNumber}>400+</h3>
+                        <h3 className={styles.statNumber}>
+                            <CountUp
+                                from={0}
+                                to={400}
+                                separator=","
+                                direction="up"
+                                duration={2}
+                                className={`count-up-text ${styles.statNumber}`}
+
+                            />
+                            +
+                        </h3>
+                        {/* <h3 className={styles.statNumber}
+                        >400+</h3> */}
                         <p className={styles.statLabel}>Active Clients</p>
                     </div>
                 </div>

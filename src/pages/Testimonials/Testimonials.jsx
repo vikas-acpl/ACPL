@@ -1,7 +1,10 @@
 import React from 'react'
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
 import styles from './Testimonials.module.css'
 import StarBorder from '../../components/StarBorder';
 import avatar from '../../assets/avatar.png'
+import { useState } from 'react';
 
 const Testimonials = () => {
 
@@ -38,6 +41,28 @@ const Testimonials = () => {
             img: avatar,
         }
     ]
+    const [currentSlide, setCurrentSlide] = useState(0)
+    const [loaded, setLoaded] = useState(false)
+    const [sliderRef, instanceRef] = useKeenSlider({
+        initial: 0,
+        slideChanged(slider) {
+            setCurrentSlide(slider.track.details.rel);
+        },
+        created() {
+            setLoaded(true);
+        },
+        loop: true,
+        breakpoints: {
+            "(min-width: 400px)": {
+                slides: { perView: 2, spacing: 5 },
+            },
+            "(min-width: 1000px)": {
+                slides: { perView: 3, spacing: 20 },
+            },
+        },
+        slides: { perView: 1 },
+    });
+
 
     return (
         <section className={styles.testimonials}>
@@ -64,7 +89,34 @@ const Testimonials = () => {
                         value, protection, and trust across industries and geographies.
                     </p>
                 </div>
-                <div className={styles.testimonialsCards}>
+                <div ref={sliderRef} className="keen-slider">
+                    {testimonialsData.map((t, i) => (
+                        <div key={i} className={`keen-slider__slide ${styles.card}`}>
+                            <div><p className={styles.quoteMark}>“</p>
+                                <p className={styles.text}>{t.text}</p>
+                            </div>
+                            <div className={styles.cardFooter}>
+                                <img src={t.img} alt={t.name} className={styles.avatar} />
+                                <div>
+                                    <div className={styles.name}>{t.name}</div>
+                                    <div className={styles.title}>{t.title}</div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                {loaded && instanceRef.current && (
+                    <div className="dots">
+                        {[...Array(instanceRef.current.track.details.slides.length).keys()].map(idx => (
+                            <button
+                                key={idx}
+                                onClick={() => instanceRef.current?.moveToIdx(idx)}
+                                className={"dot" + (currentSlide === idx ? " active" : "")}
+                            />
+                        ))}
+                    </div>
+                )}
+                {/* <div className={styles.testimonialsCards}>
                     {testimonialsData.map((t, i) => (
                         <div className={styles.card} key={i}>
                             <div><p className={styles.quoteMark}>“</p>
@@ -78,7 +130,7 @@ const Testimonials = () => {
                             </div>
                         </div>
                     ))}
-                </div>
+                </div> */}
             </div>
         </section>
     )

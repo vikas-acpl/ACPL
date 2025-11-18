@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styles from './ContactForm.module.css'
@@ -204,6 +204,8 @@ const options = countryCodes.map(({ code }) => ({ value: code, label: code }));
 
 
 const ContactForm = () => {
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
     return (
         <section id="contact-form" className={styles.contactForm}>
             <div className={`container ${styles.contactFormContainer}`}>
@@ -250,6 +252,7 @@ const ContactForm = () => {
                             });
                             actions.setSubmitting(false);
                             actions.resetForm();
+                            setIsSubmitted(true);
                         }}
                     >
                         {({ values, isSubmitting, setFieldValue }) => (
@@ -350,8 +353,12 @@ const ContactForm = () => {
                                 />
                                 <ErrorMessage name="description" component="div" className={styles.error} />
                                 <div className={styles.actionBtn}>
-                                    <button type="submit" className={`btn btn--primary ${styles.submitBtn}`} disabled={isSubmitting}>
-                                        Submit
+                                    <button
+                                        type="submit"
+                                        className={`btn btn--primary ${styles.submitBtn}`}
+                                        disabled={isSubmitting || isSubmitted}
+                                    >
+                                        {isSubmitted ? "Submit successfully" : "Submit"}
                                     </button>
                                 </div>
                             </Form>
