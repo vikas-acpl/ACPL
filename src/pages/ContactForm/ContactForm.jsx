@@ -330,8 +330,11 @@ const ContactForm = () => {
                                     <div className={styles.fieldBox}>
                                         <Field as="select" name="serviceArea" className={styles.input}>
                                             <option value="" disabled hidden>Preferred Service Area*</option>
-                                            <option value="Consulting">Consulting</option>
+                                            <option value="Architectural design">Architectural design</option>
+                                            <option value="Vulnerability Assessment">Vulnerability Assessment</option>
+                                            <option value="Assessments & POCs">Assessments & POCs</option>
                                             <option value="Managed Services">Managed Services</option>
+                                            <option value="Managed Detection & Response">Managed Detection & Response</option>
                                         </Field>
                                         <ErrorMessage name="serviceArea" component="div" className={styles.error} />
                                     </div>

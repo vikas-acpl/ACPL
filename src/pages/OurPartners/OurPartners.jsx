@@ -64,7 +64,7 @@ const OurPartners = () => {
                             color="#fff"
                             speed="4s"
                         >
-                            <span className={styles.badge}>
+                            <span className="badgeItem">
                                 Partners & Expertise
                             </span>
                         </StarBorder>

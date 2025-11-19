@@ -35,19 +35,6 @@
     margin-bottom: 24px !important;
 }
 
-.badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: var(--color-white);
-    border-radius: 55px;
-    padding: 8px 16px;
-    font-weight: 600;
-    font-size: 12px;
-    box-shadow: 0 2px 8px rgba(228, 31, 38, 0.10);
-}
-
 .highlight {
     color: var(--color-primary);
 }
@@ -117,20 +104,34 @@
 }
 
 .ripple {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    background: rgba(228, 31, 38, 0.5);
-    border-radius: 50%;
-    transform-origin: center;
-    pointer-events: none;
-    margin-top: -10px;
-    /* half height */
-    margin-left: -10px;
-    /* half width */
-    z-index: 1;
+  animation: ripple 0.6s linear infinite;;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  background: rgba(228, 31, 38, 0.5);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--color-primary-rgb), 0.1),
+            0 0 0 10px rgba(var(--color-primary-rgb), 0.1),
+            0 0 0 20px rgba(var(--color-primary-rgb), 0.1),
+            0 0 0 30px rgba(var(--color-primary-rgb), 0.1);
+    }
+
+    100% {
+        box-shadow: 0 0 0 10px rgba(var(--color-primary-rgb), 0.1),
+            0 0 0 20px rgba(var(--color-primary-rgb), 0.1),
+            0 0 0 30px rgba(var(--color-primary-rgb), 0.1),
+            0 0 0 40px rgba(var(--color-primary-rgb), 0);
+    }
 }
 
 .line {
@@ -147,7 +148,7 @@
     font-size: 22px;
     color: #a1262a;
     font-weight: 600;
-    transition: color 0.3s, font-weight 0.3s;
+    transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
 .active .circle {
@@ -158,11 +159,11 @@
 .active .label {
     color: #ff3b37;
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .active .line {
-    transition: all ease-in;
+    transition: 0.6 all ease-in;
     background: #e41f26;
 }
 

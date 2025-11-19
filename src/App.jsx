@@ -12,6 +12,7 @@ const App = () => {
       speed: 1000,
       speedAsDuration: true,
       easing: 'easeInOutCubic',
+      offset: 150
     });
     return () => scroll.destroy();
   }, []);

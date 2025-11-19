@@ -158,7 +158,7 @@ const OurProducts = () => {
                                         color="#fff"
                                         speed="4s"
                                     >
-                                        <span className={styles.badge}>
+                                        <span className="badgeItem">
                                             Our Products
                                         </span>
                                     </StarBorder>

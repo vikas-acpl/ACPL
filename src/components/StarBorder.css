@@ -35,7 +35,7 @@
 .inner-content {
   position: relative;
   border: 1px solid #222;
-  background: linear-gradient(90deg, #6D0005 14.9%, #D3000A 100%);
+  background: linear-gradient(90deg, #6D0005 20%, #D3000A 100%);
   color: white;
   font-size: 16px;
   text-align: center;

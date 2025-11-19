@@ -63,7 +63,7 @@ const CyberCare = () => {
                             color="#fff"
                             speed="4s"
                         >
-                            <span className={styles.badge}>
+                            <span className="badgeItem">
                                 CyberCare Pro
                             </span>
                         </StarBorder>
@@ -85,7 +85,7 @@ const CyberCare = () => {
                                     color="#fff"
                                     speed="4s"
                                 >
-                                    <span className={styles.badge}>
+                                    <span className="badgeItem">
                                         CyberCare Pro
                                     </span>
                                 </StarBorder>

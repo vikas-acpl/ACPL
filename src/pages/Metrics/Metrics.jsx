@@ -23,7 +23,7 @@ const Metrics = () => {
                                 to={1000000}
                                 separator=","
                                 direction="up"
-                                duration={1}
+                                duration={0.5}
                                 className={`count-up-text ${styles.statNumber}`}
 
                             />+

@@ -16,7 +16,7 @@ const Resources = () => {
                             color="#fff"
                             speed="4s"
                         >
-                            <span className={styles.badge}>
+                            <span className="badgeItem">
                                 Resources
                             </span>
                         </StarBorder>

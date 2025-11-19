@@ -1,6 +1,4 @@
 @import "tailwindcss";
-/* @import "tw-animate-css"; */
-
 
 :root {
   --color-primary: #e41f26;
@@ -19,19 +17,6 @@ body {
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-
-#services {
-  scroll-margin-top: 300px;
-}
-
-#resources {
-  scroll-margin-top: 200px;
-}
-
-#contact-form {
-  scroll-margin-top: 100px;
 }
 
 a,
@@ -206,6 +191,19 @@ p {
   margin-bottom: 15px;
 }
 
+.badgeItem{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--color-white);
+    border-radius: 55px;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 12px;
+    box-shadow: 0 2px 8px rgba(228, 31, 38, 0.10);
+}
+
 .sectionTitle {
   font-size: 32px;
   font-weight: 700;
@@ -225,6 +223,41 @@ p {
 @keyframes bgRotate {
   100% {
     transform: rotate(1turn);
+  }
+}
+
+.popover {
+  border-radius: 8px;
+  z-index: 1090;
+  animation: trustPopoverIn .18s ease-out;
+  background: rgba(70, 7, 10, 0.4);
+  border: 1px solid #720004;
+}
+
+.popover .popover-header {
+  font-weight: 700;
+  font-size: 14px;
+  padding: 5px 12px 0 12px;
+  color: var(--color-primary);
+}
+
+.popover .popover-body {
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: .95;
+  padding: 0 12px 5px 12px;
+  color: #fff;
+}
+
+@keyframes trustPopoverIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 

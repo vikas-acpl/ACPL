@@ -1,40 +1,48 @@
 import React from 'react'
 import styles from './Services.module.css'
 import StarBorder from '../../components/StarBorder';
-import ManagedServices from '../../assets/svg/Managed-Services.svg'
+import ArchitecturalDesign from '../../assets/svg/ArchitecturalDesign.svg'
+import VulnerabilityAssessment from '../../assets/svg/VulnerabilityAssessment.svg'
 import Assessment from '../../assets/svg/Assessment.svg'
-import Implementation from '../../assets/svg/Implementation.svg'
-import HealthChecks from '../../assets/svg/Health-Checks.svg'
+import ManagedServices from '../../assets/svg/ManagedServices.svg'
+import MDR from '../../assets/svg/MDR.svg'
 import StackingCards, {StackingCardItem} from '../../components/StackingCards/StackingCards'
 
 const cards = [
     {
         number: "01",
-        title: "Managed Services",
+        title: "Architectural design",
         description:
-            "ACPL’s Managed Security Services provide 24×7 protection, monitoring, and optimization across networks, cloud, and endpoints—reducing risks, ensuring compliance, and maintaining resilient security with expert SOC support and measurable outcomes.",
-        icon: ManagedServices
+            "Design secure, scalable, and future-ready security architectures aligned with your business goals. From Zero Trust models to multi-cloud blueprints, we build frameworks that reduce risk, optimize performance, and enable long-term cyber resilience.",
+        icon: ArchitecturalDesign
     },
     {
         number: "02",
-        title: "Assessment & POCs",
+        title: "Vulnerability Assessment",
         description:
-            "We assess your existing security posture and validate new solutions through hands-on Proofs of Concept, uncovering gaps, benchmarking performance, and ensuring measurable outcomes before large-scale implementation or investment decisions.",
-        icon: Assessment
+            "Identify weaknesses before attackers do. Our comprehensive assessments uncover system, network, and configuration gaps—delivering actionable insights and prioritized remediation to strengthen your organization’s overall security posture.",
+        icon: VulnerabilityAssessment
     },
     {
         number: "03",
-        title: "Implementation",
+        title: "Assessments & POCs",
         description:
-            "ACPL’s certified engineers deploy and integrate leading cybersecurity platforms seamlessly into your environment — ensuring secure configurations, policy alignment, and optimized performance for faster time-to-value and minimal business disruption.",
-        icon: Implementation
+            "Validate the right technologies with confidence. We conduct real-world assessments and tailored proof-of-concepts, ensuring every solution meets your operational, compliance, and security requirements before full deployment.",
+        icon: Assessment
     },
     {
         number: "04",
-        title: "Health Checks",
+        title: "Managed Services",
         description:
-            "Our Health Checks identify configuration gaps, performance issues, and security blind spots — enabling fine-tuned optimization, risk reduction, and continuous improvement across networks, endpoints, and cloud environments.",
-        icon: HealthChecks
+            "Outsource complexity, not control. Our 24×7 managed services provide continuous monitoring, configuration management, optimization, and compliance reporting—ensuring uninterrupted protection across cloud, network, and endpoint ecosystems.",
+        icon: ManagedServices
+    },
+     {
+        number: "05",
+        title: "Managed Detection & Response",
+        description:
+            "Detect, investigate, and neutralize threats in real time. Our MDR services combine advanced analytics, threat intelligence, and expert SOC analysts to deliver rapid containment and proactive defense against evolving cyber attacks.",
+        icon: MDR
     },
 ];
 
@@ -50,7 +58,7 @@ const Services = () => {
                             color="#fff"
                             speed="4s"
                         >
-                            <span className={styles.badge}>
+                            <span className="badgeItem">
                                 Our Services
                             </span>
                         </StarBorder>
