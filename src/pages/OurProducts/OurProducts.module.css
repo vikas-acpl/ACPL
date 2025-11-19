@@ -1,5 +1,5 @@
 .ourProducts {
-  margin-top: 140px;
+  margin-top: 100px;
   overflow: hidden;
 }
 
@@ -82,7 +82,7 @@
 .productRow {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 140px;
+  margin-bottom: 100px;
   gap: 50px;
 }
 

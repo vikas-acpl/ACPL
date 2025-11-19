@@ -18,7 +18,7 @@ function useResponsiveValue(desktopValue, mobileValue, breakpoint = 768) {
 export default function Lines() {
   const width = 1000;
   const height = useResponsiveValue(200, 120, 768);
-  const strokeWidth = useResponsiveValue(2, 4, 768); 
+  const strokeWidth = useResponsiveValue(3, 4, 768); 
   const count = 6;
 
   return (
@@ -47,25 +47,25 @@ export default function Lines() {
           <motion.stop
             stopColor="rgba(0,0,0,0.5)"
             animate={{ offset: ["-150%", "100%"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             strokeDasharray="60 100"
           />
           <motion.stop
             stopColor="transparent"
             animate={{ offset: ["-20%", "100%"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             strokeDasharray="60 100"
           />
           <motion.stop
             stopColor="#fff"
             animate={{ offset: ["-12%", "108%"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             strokeDasharray="60 100"
           />
           <motion.stop
             stopColor="rgba(0,0,0,0.5)"
             animate={{ offset: ["-8%", "112%"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             strokeDasharray="60 100"
           />
         </linearGradient>

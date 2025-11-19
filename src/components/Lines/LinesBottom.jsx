@@ -18,8 +18,8 @@ function useResponsiveValue(desktopValue, mobileValue, breakpoint = 768) {
 export default function LinesBottom() {
   const width = 1000;
   const height = useResponsiveValue(200, 120, 768);
-  const strokeWidth = useResponsiveValue(2, 4, 768); 
-  const count = 6;
+  const strokeWidth = useResponsiveValue(3, 4, 768); 
+  const count = 6;  
 
   return (
     <svg
@@ -47,22 +47,22 @@ export default function LinesBottom() {
           <motion.stop
             stopColor="rgba(0,0,0,0.5)"
             animate={{ offset: ["100%", "-150%"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           />
           <motion.stop
             stopColor="transparent"
             animate={{ offset: ["-20%", "100%"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           />
           <motion.stop
             stopColor="#e41f26"
             animate={{ offset: ["-12%", "108%"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           />
           <motion.stop
             stopColor="rgba(0,0,0,0.5)"
             animate={{ offset: ["-8%", "112%"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           />
         </linearGradient>
       </defs>

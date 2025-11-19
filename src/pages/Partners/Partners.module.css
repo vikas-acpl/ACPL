@@ -52,7 +52,7 @@
     width: max-content;
     will-change: transform;
     animation: partnerStripScroll 28s linear infinite;
-    gap: 40px
+    gap: 60px
 }
 
 .partnerStripWrap:hover .partnerStripTrack {
@@ -60,7 +60,7 @@
 }
 
 .partnerStripImg {
-    height: 40px;
+    height: 30px;
     width: auto;
     display: block;
 }
@@ -93,11 +93,11 @@
         margin-top: 30px;
     }
 
-    .partnersContainer{
+    .partnersContainer {
         flex-direction: column;
     }
 
-    .partnerHeading{
+    .partnerHeading {
         text-align: center;
     }
 
