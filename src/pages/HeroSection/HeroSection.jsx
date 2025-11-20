@@ -90,7 +90,7 @@ const HeroSection = () => {
                     ))}
                 </div> */}
                 <div className={styles.map}>
-                    <img src={ausMap} alt="Australia map" className={styles.trustMapImg} />
+                    <img src={ausMap} alt="Australia map" fetchpriority="high" className={styles.trustMapImg} />
                     {mapPoints.map((p) => (
                         <button
                             key={p.id}
