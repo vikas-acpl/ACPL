@@ -13,6 +13,7 @@
     justify-content: space-between;
     width: 100%;
     padding-top: 160px;
+    gap: 60px
 }
 
 .hero .background {
@@ -115,6 +116,14 @@
         /* padding: 40px 12px; */
     }
 
+    .heroContainer {
+        gap: 40px;
+    }
+
+    .trustMapImg {
+        width: 320px;
+    }
+
     .content {
         flex: 1;
     }
@@ -124,7 +133,6 @@
     }
 
     .content {
-        margin-bottom: 40px;
         max-width: 100%;
         text-align: left;
     }

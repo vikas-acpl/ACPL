@@ -6,18 +6,19 @@ import StarBorder from '../../components/StarBorder';
 import BlurText from "../../components/BlurText";
 // import Globe from "../../components/Globe/Globe";
 import ausMap from '../../assets/svg/ausmap.svg'
+import { Tooltip } from 'react-tooltip';
 import { useEffect } from "react";
 
 const HeroSection = () => {
 
-    useEffect(() => {
-        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
-        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
-        // Optional cleanup function to dispose popovers on unmount
-        return () => {
-            popoverList.forEach(pop => pop.dispose());
-        };
-    }, []);
+    // useEffect(() => {
+    //     const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+    //     const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+    //     // Optional cleanup function to dispose popovers on unmount
+    //     return () => {
+    //         popoverList.forEach(pop => pop.dispose());
+    //     };
+    // }, []);
 
 
     const mapPoints = [
@@ -68,7 +69,7 @@ const HeroSection = () => {
                 {/* <div className={styles.globe}>
                     <Globe />
                 </div> */}
-                <div className={styles.map}>
+                {/* <div className={styles.map}>
                     <img
                         src={ausMap}
                         alt="Australia map"
@@ -87,6 +88,25 @@ const HeroSection = () => {
                             data-bs-content={`${p.threats} active threats`}
                         />
                     ))}
+                </div> */}
+                <div className={styles.map}>
+                    <img src={ausMap} alt="Australia map" className={styles.trustMapImg} />
+                    {mapPoints.map((p) => (
+                        <button
+                            key={p.id}
+                            type="button"
+                            className={`ripple ${styles.mapPin}`}
+                            style={{ left: p.left, top: p.top }}
+                            data-tooltip-id="map-tooltip"
+                            data-tooltip-html={`<div class="map-tooltip-header">${p.label}</div><div class="map-tooltip-body">${p.threats} active threats</div>`}
+                            aria-label={`${p.label} - ${p.threats} active threats`}
+                        />
+                    ))}
+                    <Tooltip
+                        id="map-tooltip"
+                        place="top"
+                        effect="solid"
+                    />
                 </div>
             </div>
         </section>

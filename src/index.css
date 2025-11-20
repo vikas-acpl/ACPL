@@ -226,7 +226,7 @@ p {
   }
 }
 
-.popover {
+#map-tooltip {
   border-radius: 8px;
   z-index: 1090;
   animation: trustPopoverIn .18s ease-out;
@@ -234,18 +234,18 @@ p {
   border: 1px solid #720004;
 }
 
-.popover .popover-header {
+.map-tooltip-header {
   font-weight: 700;
   font-size: 14px;
-  padding: 5px 12px 0 12px;
+  /* padding: 5px 12px 0 12px; */
   color: var(--color-primary);
 }
 
-.popover .popover-body {
+.map-tooltip-body {
   font-size: 13px;
   line-height: 1.4;
   opacity: .95;
-  padding: 0 12px 5px 12px;
+  /* padding: 0 12px 5px 12px; */
   color: #fff;
 }
 
