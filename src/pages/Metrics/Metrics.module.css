@@ -1,5 +1,5 @@
 .metrics {
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .card {
@@ -28,7 +28,6 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 36px;
-    margin-bottom: 60px;
 }
 
 .statIcon {
