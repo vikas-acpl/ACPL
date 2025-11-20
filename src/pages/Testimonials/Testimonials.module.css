@@ -38,20 +38,29 @@
 }
 
 .card {
+    background-color: #2f0000 !important;
+    border: 1px solid #720004 !important;
+}
+
+
+
+.card {
     flex: 1;
-    background: linear-gradient(136.71deg, rgba(67, 67, 67, 0.86) -24.05%, rgba(0, 0, 0, 0) 115.5%);
+    /* background: linear-gradient(136.71deg, rgba(67, 67, 67, 0.86) -24.05%, rgba(0, 0, 0, 0) 115.5%);
     backdrop-filter: blur(7.91175px);
-    border-radius: 12px;
-    box-shadow: 0 3px 16px 0 #1a202a19;
-    padding: 40px;
+    box-shadow: 0 3px 16px 0 #1a202a19; */
+    border-radius: 12px !important;
+    padding: 40px !important;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
     min-width: 310px;
+    background: radial-gradient(112.5% 111.22% at 104.39% 0%, rgba(179, 0, 8, 0.6) 0%, rgba(69, 0, 2, 0.6) 100%)
 }
 
-.card::before {
+
+/* .card::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -63,7 +72,7 @@
     background-repeat: repeat;
     border-radius: inherit;
     top: -10px;
-}
+} */
 
 .quoteMark {
     font-size: 60px;
@@ -133,7 +142,7 @@
         flex: 0 0 auto;
         scroll-snap-align: start;
         padding: 24px;
-        width:100%;
+        width: 100%;
     }
 
     .quoteMark {

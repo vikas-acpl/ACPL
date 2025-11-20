@@ -6,6 +6,7 @@ import Klassify from '../../assets/products/Klassify.png'
 import Attackfence from '../../assets/products/Attackfence.png'
 import Cvehub from '../../assets/products/Cvehub.png'
 import Points from '../../assets/points1.png'
+import TiltedCard from '../../components/TiltedCard/TiltedCard';
 
 function useIsMobile(breakpoint = 768) {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= breakpoint);
@@ -184,7 +185,19 @@ const OurProducts = () => {
                                 <div className={styles.left}>
                                     <h3 className={styles.productsTitle}>{product.productsTitle}</h3>
                                     <p className={styles.productsDesc}>{product.productsDesc}</p>
-                                    <img src={product.img} alt={product.productsTitle} className={styles.productsImage} />
+                                    <TiltedCard
+                                        imageSrc={product.img}
+                                        altText={product.productsTitle}
+                                        containerHeight = '176px'
+                                        imageHeight="176px"
+                                        imageWidth="360px"
+                                        rotateAmplitude={12}
+                                        scaleOnHover={1.1}
+                                        showMobileWarning={false}
+                                        showTooltip={false}
+                                        displayOverlayContent={false}
+                                    />
+                                    {/* <img src={product.img} alt={product.productsTitle} className={styles.productsImage} /> */}
                                     <div className={styles.productsTags}>
                                         {product.productsTags.map(tag => (
                                             <span key={tag}>{tag}</span>
@@ -244,7 +257,16 @@ const OurProducts = () => {
                                     <div className={styles.left}>
                                         <h3 className={styles.productsTitle}>{product.productsTitle}</h3>
                                         <p className={styles.productsDesc}>{product.productsDesc}</p>
-                                        <img src={product.img} alt={product.productsTitle} className={styles.productsImage} />
+                                        <TiltedCard
+                                            imageSrc={product.img}
+                                            altText={product.productsTitle}
+                                            rotateAmplitude={12}
+                                            scaleOnHover={1.1}
+                                            showMobileWarning={false}
+                                            showTooltip={false}
+                                            displayOverlayContent={false}
+                                        />
+                                        {/* <img src={product.img} alt={product.productsTitle} className={styles.productsImage} /> */}
                                         <div className={styles.productsTags}>
                                             {product.productsTags.map(tag => (
                                                 <span key={tag}>{tag}</span>
@@ -274,7 +296,16 @@ const OurProducts = () => {
                                     <div className={styles.left}>
                                         <h3 className={styles.productsTitle}>{product.productsTitle}</h3>
                                         <p className={styles.productsDesc}>{product.productsDesc}</p>
-                                        <img src={product.img} alt={product.productsTitle} className={styles.productsImage} />
+                                        <TiltedCard
+                                            imageSrc={product.img}
+                                            altText={product.productsTitle}
+                                            rotateAmplitude={12}
+                                            scaleOnHover={1.1}
+                                            showMobileWarning={false}
+                                            showTooltip={false}
+                                            displayOverlayContent={false}
+                                        />
+                                        {/* <img src={product.img} alt={product.productsTitle} className={styles.productsImage} /> */}
                                         <div className={styles.productsTags}>
                                             {product.productsTags.map(tag => (
                                                 <span key={tag}>{tag}</span>

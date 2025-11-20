@@ -4,6 +4,7 @@ import 'keen-slider/keen-slider.min.css';
 import styles from './Testimonials.module.css'
 import StarBorder from '../../components/StarBorder';
 import avatar from '../../assets/avatar.png'
+import SpotlightCard from '../../components/SpotlightCard/SpotlightCard';
 import { useState } from 'react';
 
 const Testimonials = () => {
@@ -67,7 +68,7 @@ const Testimonials = () => {
     return (
         <section className={styles.testimonials}>
             <div className={`container ${styles.testimonialsContainer}`}>
-                <div className={`sectionHeader ${styles.partnerHeader}`}>
+                <div className={`sectionHeader ${styles.partnerHeader}`}>   
                     <div className='badge'>
                         <StarBorder
                             as="button"
@@ -91,7 +92,7 @@ const Testimonials = () => {
                 </div>
                 <div ref={sliderRef} className="keen-slider">
                     {testimonialsData.map((t, i) => (
-                        <div key={i} className={`keen-slider__slide ${styles.card}`}>
+                        <SpotlightCard key={i} className={`keen-slider__slide custom-spotlight-card ${styles.card}`} spotlightColor="rgba(255, 255, 255, 0.3)">
                             <div><p className={styles.quoteMark}>“</p>
                                 <p className={styles.text}>{t.text}</p>
                             </div>
@@ -102,7 +103,7 @@ const Testimonials = () => {
                                     <div className={styles.title}>{t.title}</div>
                                 </div>
                             </div>
-                        </div>
+                        </SpotlightCard>
                     ))}
                 </div>
                 {loaded && instanceRef.current && (

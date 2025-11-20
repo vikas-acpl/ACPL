@@ -32,7 +32,16 @@
     display: flex;
     flex-direction: column;
     padding: 12px;
+    transition: all 0.3s ease;
 }
+
+.mainCard:hover {
+    background: rgba(70, 7, 10, 0.4);
+    border-color: #e41f26;
+    box-shadow: 0px 0px 20px rgba(228, 31, 38, 0.5);
+    transform: translateY(-4px);
+}
+
 
 .mainCard img {
     width: 100%;
@@ -75,6 +84,7 @@
     flex-direction: column;
     gap: 20px;
     min-width: 350px;
+    
 }
 
 .card {
@@ -86,6 +96,15 @@
     flex-direction: row;
     gap: 20px;
     align-items: flex-start;
+    transition: all 0.3s ease;
+}
+
+
+.card:hover {
+    background: rgba(70, 7, 10, 0.4);
+    border-color: #e41f26;
+    box-shadow: 0px 0px 20px rgba(228, 31, 38, 0.5);
+    transform: translateY(-4px);
 }
 
 .card>div:first-child {
