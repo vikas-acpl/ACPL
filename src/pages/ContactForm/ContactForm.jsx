@@ -222,14 +222,14 @@ const ContactForm = () => {
                             <img src={email} className={styles.icon} />
                             <div className={styles.Lables}>
                                 <span className={styles.label}>E-mail</span>
-                                <span className={styles.email}>info@acpl.com</span>
+                                <a href="mailto:info@acpl.com" className={styles.email}>info@acpl.com</a>
                             </div>
                         </div>
                         <div className={styles.detailRow}>
                             <img src={phone} className={styles.icon} />
                             <div className={styles.Lables}>
                                 <span className={styles.label}>Phone number</span>
-                                <span className={styles.phone}>+61 410 485 811</span>
+                                <a href="tel:+61410485811" className={styles.phone}>+61 410 485 811</a>
                             </div>
                         </div>
                     </div>

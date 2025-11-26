@@ -1,8 +1,9 @@
 import React from 'react'
 import styles from './Resources.module.css'
 import StarBorder from '../../components/StarBorder';
-import Blog1 from '../../assets/Resources/Blog1.png'
 import Blog2 from '../../assets/Resources/Blog2.png'
+import Blog3 from '../../assets/Resources/Blog3.png'
+import Blog4 from '../../assets/Resources/Blog4.png'
 
 const Resources = () => {
     return (
@@ -33,7 +34,7 @@ const Resources = () => {
                 <div className={styles.resourcesCard}>
                     <div className={styles.mainCard}>
                         <video
-                            src="https://www.acpl.com/website/docs/video.mp4"
+                            src="https://acpl.com/anz-resources/acpl-video.mp4"
                             className={styles.mainMedia}
                             autoPlay
                             muted
@@ -57,10 +58,10 @@ const Resources = () => {
                                 <p className={styles.dateText}>Apr 8, 2022</p>
                             </div>
                         </a>
-                        <a href="https://www.attackfence.com/storage/resource/files/WxeamOViiJuclR2kg7ZoCvGLoRYAJpH6y5ZHYUiX.pdf" target="_blank"
+                        <a href="https://acpl.com/anz-resources/af-ndr-updated.pdf" target="_blank"
                             rel="noopener noreferrer" className={styles.card}>
                             <div>
-                                <img src={Blog2} alt="Blog3" />
+                                <img src={Blog3} alt="Blog3" />
                             </div>
                             <div>
                                 <p className={styles.readTime}>10 MINS READ</p>
@@ -68,16 +69,17 @@ const Resources = () => {
                                 <p className={styles.dateText}>Apr 8, 2022</p>
                             </div>
                         </a>
-                        <div className={styles.card}>
+                        <a href="https://acpl.com/anz-resources/data-classification.pdf" target="_blank"
+                            rel="noopener noreferrer" className={styles.card}>
                             <div>
-                                <img src={Blog2} alt="Blog3" />
+                                <img src={Blog4} alt="Blog3" />
                             </div>
                             <div>
                                 <p className={styles.readTime}>10 MINS READ</p>
-                                <h4 className={styles.cardTitle}>7 Building Blocks of Data Classification Program for Effective Data Security.</h4>
+                                <h4 className={styles.cardTitle}>Klassify Data Classification Suite</h4>
                                 <p className={styles.dateText}>Apr 8, 2022</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
