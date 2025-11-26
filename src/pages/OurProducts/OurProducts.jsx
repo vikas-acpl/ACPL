@@ -119,7 +119,7 @@ const OurProducts = () => {
 
     return (
         <>
-            <section id="products" className={styles.ourProducts} ref={sectionRef}>
+            <section className={styles.ourProducts} ref={sectionRef}>
                 <div className={styles.panelContainer}>
                     <motion.div
                         className={styles.panel}
@@ -177,7 +177,7 @@ const OurProducts = () => {
                     </div>
                 </div>
             </section>
-            <section className={styles.products}>
+            <section id="products" className={styles.products}>
                 <div className={`container ${styles.productsContainer}`}>
                     {products.map((product, idx) => (
                         <div className={styles.productRow} key={product.productsTitle}>

@@ -76,13 +76,21 @@ p {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 60px; 
+  padding-left: 60px;
   padding-right: 60px;
   box-sizing: border-box;
 }
 
 .text-center {
   text-align: center;
+}
+
+.desktopView {
+  display: none;
+}
+
+.mobileView {
+  display: none;
 }
 
 .desktopHeader {
@@ -185,17 +193,17 @@ p {
   margin-bottom: 15px;
 }
 
-.badgeItem{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: var(--color-white);
-    border-radius: 55px;
-    padding: 8px 16px;
-    font-weight: 600;
-    font-size: 12px;
-    box-shadow: 0 2px 8px rgba(228, 31, 38, 0.10);
+.badgeItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--color-white);
+  border-radius: 55px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 12px;
+  box-shadow: 0 2px 8px rgba(228, 31, 38, 0.10);
 }
 
 .sectionTitle {
@@ -231,7 +239,7 @@ p {
 .map-tooltip-header {
   font-weight: 700;
   font-size: 14px;
-  color: var(--color-primary);  
+  color: var(--color-primary);
 }
 
 .map-tooltip-body {
@@ -259,17 +267,25 @@ p {
     padding-left: 24px;
     padding-right: 24px;
   }
+
+   .desktopView {
+    display: block;
+  }
 }
 
 @media (max-width: 480px) {
   .container {
     max-width: 100%;
-    padding-left: 12px; 
+    padding-left: 12px;
     padding-right: 12px;
   }
 
   .sectionHeader {
     margin-bottom: 40px;
+  }
+
+  .desktopView {
+    display: block;
   }
 
   .sectionTitle {

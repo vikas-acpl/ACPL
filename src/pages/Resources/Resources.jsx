@@ -41,10 +41,10 @@ const Resources = () => {
                             loop
                             playsInline
                         />
-                        <p className={styles.readTime}>20 MINS READ</p>
+                        {/* <p className={styles.readTime}>20 MINS READ</p> */}
                         <h3 className={styles.cardTitle}>35 Years of Cybersecurity Excellence</h3>
                         <p className={styles.description}>
-                            As a Managed Service Provider, we know the challenges of keeping businesses secure in an ever-evolving digital world, but with this incredible team, there's no problem we can't solve.
+                            Honouring a legacy built on trust, engineering excellence, relentless innovation, and an unwavering dedication to safeguarding digital ecosystems and empowering businesses with world-class cybersecurity.
                         </p>
                         <p className={styles.dateText}>Jan 12, 2022</p>
                     </div>

@@ -112,7 +112,7 @@ const Testimonials = () => {
                     ))}
                 </div>
                 {loaded && instanceRef.current && (
-                    <div className="dots">
+                    <div className="dots desktopView">
                         {[...Array(instanceRef.current.track.details.slides.length).keys()].map(idx => (
                             <button
                                 key={idx}

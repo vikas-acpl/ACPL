@@ -40,6 +40,10 @@
     transform: translateY(-4px);
 }
 
+.mainCard .cardTitle{
+    margin-top: 20px;
+}
+
 
 .mainCard img {
     width: 100%;
@@ -80,7 +84,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 20px;
     min-width: 350px;
 
 }
@@ -197,6 +201,10 @@
         font-size: 14px;
         -webkit-line-clamp: 2;
     }
+
+    .mainCard .cardTitle{
+    margin-top: 10px;
+}
 
     .description {
         font-size: 12px;
