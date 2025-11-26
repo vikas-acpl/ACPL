@@ -25,18 +25,43 @@ import SIEMSOAR from '../../assets/partnerslogo/SIEM-SOAR.svg'
 import DataClassification from '../../assets/partnerslogo/Data-Classification.svg'
 import DataSecurity from '../../assets/partnerslogo/Data-Security.svg'
 import EmailSecurity from '../../assets/partnerslogo/Email-Security.svg'
+import MicrosoftClR from '../../assets/PartnersLogoClr/Microsoft-color.svg'
+import PaloAltoClR from '../../assets/PartnersLogoClr/PaloAlto-color.svg'
+import FortinetClr from '../../assets/PartnersLogoClr/Fortinet-color.svg'
+import ZscalerClr from '../../assets/PartnersLogoClr/Zscaler-color.svg'
+import CrowdstrikeClr from '../../assets/PartnersLogoClr/Crowdstrike-color.svg'
+import NetskopeClr from '../../assets/PartnersLogoClr/Netskope-color.svg'
+import CloudflareClr from '../../assets/PartnersLogoClr/Cloudflare-color.svg'
+import OktaClr from '../../assets/PartnersLogoClr/okta-color.svg'
+import WizClr from '../../assets/PartnersLogoClr/Wiz-color.svg'
+import QualysClr from '../../assets/PartnersLogoClr/Qualys-color.svg'
+import { useState } from 'react';
+
 
 const partners = [
-    { name: "Netskope", logo: Netskope },
-    { name: "Zscaler", logo: Zscaler },
-    { name: "Fortinet", logo: Fortinet },
-    { name: "Cloudflare", logo: Cloudflare },
-    { name: "Palo Alto Networks", logo: PaloAlto },
-    { name: "Okta", logo: Okta },
-    { name: "Crowdstrike", logo: Crowdstrike },
     { name: "Microsoft", logo: Microsoft },
-    { name: "Qualys", logo: Qualys },
+    { name: "Palo Alto Networks", logo: PaloAlto },
+    { name: "Fortinet", logo: Fortinet },
+    { name: "Zscaler", logo: Zscaler },
+    { name: "Crowdstrike", logo: Crowdstrike },
+    { name: "Netskope", logo: Netskope },
+    { name: "Cloudflare", logo: Cloudflare },
+    { name: "Okta", logo: Okta },
     { name: "Wiz", logo: Wiz },
+    { name: "Qualys", logo: Qualys },
+];
+
+const partnersClr = [
+    { name: "Microsoft", logo: MicrosoftClR },
+    { name: "Palo Alto Networks", logo: PaloAltoClR },
+    { name: "Fortinet", logo: FortinetClr },
+    { name: "Zscaler", logo: ZscalerClr },
+    { name: "Crowdstrike", logo: CrowdstrikeClr },
+    { name: "Netskope", logo: NetskopeClr },
+    { name: "Cloudflare", logo: CloudflareClr },
+    { name: "Okta", logo: OktaClr },
+    { name: "Wiz", logo: WizClr },
+    { name: "Qualys", logo: QualysClr },
 ];
 
 const Companies = [
@@ -53,6 +78,8 @@ const Companies = [
 ];
 
 const OurPartners = () => {
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+
     return (
         <section className={styles.ourPartners}>
             <div className={`container ${styles.partnerContainer}`}>
@@ -80,23 +107,32 @@ const OurPartners = () => {
                 </div>
                 <div className={styles.partners}>
                     <div className={styles.logoGrid}>
-                        {partners.map((partner) => (
-                            <div className={styles.partner} key={partner.name}>
-                                <div className={styles.box1}>
+                        {partners.map((partner, index) => {
+                            const colorLogo = partnersClr[index]?.logo;
+                            const isHovered = hoveredIndex === index;
+                            return (
+                                <div className={styles.partner} key={partner.name} onMouseEnter={() => setHoveredIndex(index)}
+                                    onMouseLeave={() => setHoveredIndex(null)}>
+                                    <div className={styles.box1}>
+                                    </div>
+                                    <div className={styles.box2}>
+                                    </div>
+                                    <div className={styles.box3}>
+                                    </div>
+                                    <div className={styles.box4}>
+                                    </div>
+                                    <div className={styles.background}>
+                                        <img src={Points} alt="points" />
+                                    </div>
+                                    <img
+                                        className={styles.partnerLogo}
+                                        src={isHovered && colorLogo ? colorLogo : partner.logo}
+                                        alt={`${partner.name} logo`}
+                                    />
+                                    <h3>{partner.name}</h3>
                                 </div>
-                                <div className={styles.box2}>
-                                </div>
-                                <div className={styles.box3}>
-                                </div>
-                                <div className={styles.box4}>
-                                </div>
-                                <div className={styles.background}>
-                                    <img src={Points} alt="points" />
-                                </div>
-                                <img className={styles.partnerLogo} src={partner.logo} alt={`${partner.name} logo`} />
-                                <h3>{partner.name}</h3>
-                            </div>
-                        ))}
+                            )
+                        })}
                     </div>
                 </div>
                 <div className={styles.lines}>

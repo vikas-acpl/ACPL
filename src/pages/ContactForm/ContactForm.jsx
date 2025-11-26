@@ -244,7 +244,6 @@ const ContactForm = () => {
                         validationSchema={validationSchema}
                         onSubmit={async (values, actions) => {
                             console.log(values);
-                            // Replace with your backend API submission
                             await fetch('/api/contact', {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },

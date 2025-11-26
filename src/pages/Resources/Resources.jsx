@@ -32,24 +32,33 @@ const Resources = () => {
                 </div>
                 <div className={styles.resourcesCard}>
                     <div className={styles.mainCard}>
-                        <img src={Blog1} alt="Blog1" />
+                        <video
+                            src="https://www.acpl.com/website/docs/video.mp4"
+                            className={styles.mainMedia}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                        />
                         <p className={styles.readTime}>20 MINS READ</p>
-                        <h3 className={styles.cardTitle}>BCCL Embraces Advanced Security</h3>
+                        <h3 className={styles.cardTitle}>35 Years of Cybersecurity Excellence</h3>
                         <p className={styles.description}>
-                            As BCCL looked to the future, it recognised the need for a critical evolution to revitalise its ageing IT infrastructure, which had become a bottleneck to its operational agility and security.
+                            As a Managed Service Provider, we know the challenges of keeping businesses secure in an ever-evolving digital world, but with this incredible team, there's no problem we can't solve.
                         </p>
                         <p className={styles.dateText}>Jan 12, 2022</p>
                     </div>
                     <div className={styles.cards}>
-                        <div className={styles.card}>
+                        <a href="https://www.acpl.com/website/docs/BCCL-embraces-advanced-security-7-feb-2025-mv-v2.pdf" target="_blank"
+                            rel="noopener noreferrer" className={styles.card}>
                             <div><img src={Blog2} alt="Blog2" /></div>
                             <div>
                                 <p className={styles.readTime}>10 MINS READ</p>
-                                <h4 className={styles.cardTitle}>What is Dark Data and approach to regain control over it.</h4>
+                                <h4 className={styles.cardTitle}>BCCL Embraces Advanced Security</h4>
                                 <p className={styles.dateText}>Apr 8, 2022</p>
                             </div>
-                        </div>
-                        <div className={styles.card}>
+                        </a>
+                        <a href="https://www.attackfence.com/storage/resource/files/WxeamOViiJuclR2kg7ZoCvGLoRYAJpH6y5ZHYUiX.pdf" target="_blank"
+                            rel="noopener noreferrer" className={styles.card}>
                             <div>
                                 <img src={Blog2} alt="Blog3" />
                             </div>
@@ -58,7 +67,7 @@ const Resources = () => {
                                 <h4 className={styles.cardTitle}>AttackFence NDR</h4>
                                 <p className={styles.dateText}>Apr 8, 2022</p>
                             </div>
-                        </div>
+                        </a>
                         <div className={styles.card}>
                             <div>
                                 <img src={Blog2} alt="Blog3" />

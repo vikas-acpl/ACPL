@@ -25,8 +25,8 @@ const Metrics = () => {
                                 direction="up"
                                 duration={0.5}
                                 className={`count-up-text ${styles.statNumber}`}
-
-                            />+
+                            />
+                            +
                         </h3>
                         <p className={styles.statLabel}>Professional Services Hours</p>
                     </div>
@@ -45,7 +45,6 @@ const Metrics = () => {
                                 direction="up"
                                 duration={2}
                                 className={`count-up-text ${styles.statNumber}`}
-
                             />
                             +
                         </h3>
@@ -66,7 +65,6 @@ const Metrics = () => {
                                 direction="up"
                                 duration={2}
                                 className={`count-up-text ${styles.statNumber}`}
-
                             />
                             +
                         </h3>
@@ -87,12 +85,9 @@ const Metrics = () => {
                                 direction="up"
                                 duration={2}
                                 className={`count-up-text ${styles.statNumber}`}
-
                             />
                             +
                         </h3>
-                        {/* <h3 className={styles.statNumber}
-                        >400+</h3> */}
                         <p className={styles.statLabel}>Active Clients</p>
                     </div>
                 </div>

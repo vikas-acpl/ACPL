@@ -4,6 +4,8 @@ import 'keen-slider/keen-slider.min.css';
 import styles from './Testimonials.module.css'
 import StarBorder from '../../components/StarBorder';
 import avatar from '../../assets/avatar.png'
+import avatar2 from '../../assets/avatar2.png'
+import avatar3 from '../../assets/avatar3.png'
 import SpotlightCard from '../../components/SpotlightCard/SpotlightCard';
 import { useState } from 'react';
 
@@ -17,8 +19,8 @@ const Testimonials = () => {
                     Their sense of urgency has allowed me to vouch for them for over a decade now.
                 </>
             ),
-            name: "John Williams",
-            title: "Lead designer",
+            name: "CISO",
+            title: "FSI Organisation",
             img: avatar,
         },
         {
@@ -27,9 +29,9 @@ const Testimonials = () => {
                     Some immense scale projects have been completed by the ACPL team within weeks. They helped us build a service platform that suits our organisation's needs. Our core ACPL representatives have not changed over 15 years which has added a lot of stability to our engagement.
                 </>
             ),
-            name: "John Williams",
-            title: "Lead designer",
-            img: avatar,
+            name: "CTO",
+            title: "Phramacuetical Organisation",
+            img: avatar2,
         },
         {
             text: (
@@ -37,9 +39,9 @@ const Testimonials = () => {
                     The attention to detail and a vast partner ecosystem allowed me to really be confident about my procurement and deployment. I could focus on running the OT and IT portion while security was taken care of by team ACPL.
                 </>
             ),
-            name: "John Williams",
-            title: "Lead designer",
-            img: avatar,
+            name: "CRO",
+            title: "Crypto Brokerage",
+            img: avatar3,
         }
     ]
     const [currentSlide, setCurrentSlide] = useState(0)
@@ -54,7 +56,10 @@ const Testimonials = () => {
         },
         loop: true,
         breakpoints: {
-            "(min-width: 400px)": {
+            "(min-width: 480px)": {
+                slides: { perView: 1, spacing: 20 },
+            },
+             "(min-width: 768px)": {
                 slides: { perView: 2, spacing: 20 },
             },
             "(min-width: 1000px)": {
@@ -117,21 +122,6 @@ const Testimonials = () => {
                         ))}
                     </div>
                 )}
-                {/* <div className={styles.testimonialsCards}>
-                    {testimonialsData.map((t, i) => (
-                        <div className={styles.card} key={i}>
-                            <div><p className={styles.quoteMark}>“</p>
-                                <p className={styles.text}>{t.text}</p></div>
-                            <div className={styles.cardFooter}>
-                                <img src={t.img} alt={t.name} className={styles.avatar} />
-                                <div>
-                                    <div className={styles.name}>{t.name}</div>
-                                    <div className={styles.title}>{t.title}</div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div> */}
             </div>
         </section>
     )

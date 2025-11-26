@@ -16,7 +16,7 @@ const CyberCare = () => {
         "One Engineering Bench",
         "Multi-Vendor Expertise",
         "All-in-One Security Hub",
-        "Customer Led Engagments",
+        "Customer Led Engagements",
     ];
 
     const imageLogos = [
@@ -158,7 +158,7 @@ const CyberCare = () => {
                             ))}
                         </div>
                         <div className={`desktopHeader ${styles.actionBtn}`}>
-                            <a href="#contact-form" className="btn btn--primary">Request a Demo<img src={Arrow} alt="Right-Arrow" /></a>
+                            <a href="#contact-form" className="btn btn--primary">Find Out More<img src={Arrow} alt="Right-Arrow" /></a>
                         </div>
                     </div>
                     <div className={styles.icons}>
@@ -198,7 +198,7 @@ const CyberCare = () => {
                     </div>
                 </div>
                 <div className={`mobileHeader ${styles.actionBtn}`}>
-                    <a href="#experts" className="btn btn--primary">Request a Demo<img src={Arrow} alt="Right-Arrow" /></a>
+                    <a href="#experts" className="btn btn--primary">Find Out More<img src={Arrow} alt="Right-Arrow" /></a>
                 </div>
             </div>
         </section>

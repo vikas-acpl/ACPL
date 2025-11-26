@@ -12,10 +12,10 @@ export default function TiltedCard({
   imageSrc,
   altText = 'Tilted card image',
   captionText = '',
-  containerHeight = '332px',
-  containerWidth = '100%',
-  imageHeight = '332px',
-  imageWidth = '671px',
+  // containerHeight = '332px',
+  // containerWidth = '100%',
+  // imageHeight = '332px',
+  // imageWidth = '671px',
   scaleOnHover = 1.1,
   rotateAmplitude = 14,
   showMobileWarning = true,
@@ -77,10 +77,10 @@ export default function TiltedCard({
     <figure
       ref={ref}
       className="tilted-card-figure"
-      style={{
-        height: containerHeight,
-        width: containerWidth
-      }}
+      // style={{
+      //   height: containerHeight,
+      //   width: containerWidth
+      // }}
       onMouseMove={handleMouse}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -92,8 +92,8 @@ export default function TiltedCard({
       <motion.div
         className="tilted-card-inner"
         style={{
-          width: imageWidth,
-          height: imageHeight,
+          // width: imageWidth,
+          // height: imageHeight,
           rotateX,
           rotateY,
           scale
@@ -103,10 +103,10 @@ export default function TiltedCard({
           src={imageSrc}
           alt={altText}
           className="tilted-card-img"
-          style={{
-            width: imageWidth,
-            height: imageHeight
-          }}
+          // style={{
+          //   width: imageWidth,
+          //   height: imageHeight
+          // }}
         />
 
         {displayOverlayContent && overlayContent && (

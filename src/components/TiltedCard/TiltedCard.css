@@ -1,4 +1,4 @@
-.tilted-card-figure {
+/* .tilted-card-figure {
   position: relative;
   width: 100%;
   height: 100%;
@@ -8,6 +8,18 @@
   align-items: center;
   justify-content: center;
   margin: 24px 0;
+} */
+
+.tilted-card-figure {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  aspect-ratio: 16 / 9; /* Maintain ratio */
+  margin: 24px auto;
+  perspective: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tilted-card-mobile-alert {
@@ -27,7 +39,7 @@
   }
 }
 
-.tilted-card-inner {
+/* .tilted-card-inner {
   position: relative;
   transform-style: preserve-3d;
 }
@@ -39,6 +51,20 @@
   object-fit: cover;
   will-change: transform;
   transform: translateZ(0);
+} */
+
+.tilted-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.tilted-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .tilted-card-overlay {
@@ -62,3 +88,43 @@
   opacity: 0;
   z-index: 3;
 }
+
+@media (max-width: 1024px) {
+  .tilted-card-figure {
+    max-width: 90vw;
+    aspect-ratio: 16/9;
+  }
+}
+@media (max-width: 768px) {
+  .tilted-card-figure {
+    max-width: 95vw;
+    aspect-ratio: 16/9;
+  }
+}
+@media (max-width: 480px) {
+  .tilted-card-figure {
+    max-width: 100vw;
+    aspect-ratio: 16/9;
+  }
+}
+
+/* @media (max-width: 768px) {
+  .tilted-card-figure {
+    height: 190px !important;
+  }
+
+  .tilted-card-img,
+  .tilted-card-inner {
+    width: 379px !important;
+    height: 190px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tilted-card-img,
+  .tilted-card-inner {
+    width: 360px !important;
+    height: 176px !important;
+  }
+} */
+

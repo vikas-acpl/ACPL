@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home/Home'
 import Footer from './components/Footer/Footer'
 import SmoothScroll from 'smooth-scroll';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
       <Navbar />
       <Home />
       <Footer />
+      <ScrollToTop />
     </>
   )
 }

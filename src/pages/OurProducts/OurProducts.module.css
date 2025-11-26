@@ -81,7 +81,7 @@
 }
 
 .productsTitle {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 1.2;
   color: var(--color-white);
@@ -110,7 +110,7 @@
   background: #111111;
   border: 1px solid #4C4C4C;
   color: #fff;
-  padding: 8px 10px;
+  padding: 8px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
@@ -316,7 +316,6 @@
 
 
   .panelContainer {
-    /* height: 30vh; */
     min-height: 620px;
   }
 
@@ -324,7 +323,6 @@
     margin-bottom: 60px;
     gap: 24px;
     flex-direction: column;
-    /* text-align: center; */
   }
 
   .left {
@@ -332,8 +330,9 @@
   }
 
   .productsTitle {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 12px;
+    text-align: center;
   }
 
   .productsDesc {

@@ -1,6 +1,5 @@
 .Banner {
     padding-bottom: 100px;
-    /* margin-top: 140px; */
     background: #570000;
 }
 
@@ -19,6 +18,5 @@
 @media (max-width: 480px) {
     .Banner {
         padding-bottom: 60px;
-        /* margin-top: 60px; */
     }
 }

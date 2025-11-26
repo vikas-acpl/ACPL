@@ -8,11 +8,9 @@
     align-items: center;
 }
 
-
 .partnerHeader {
     text-align: center;
 }
-
 
 .highlight {
     color: var(--color-primary);
@@ -82,9 +80,9 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 32px;
     min-width: 350px;
-    
+
 }
 
 .card {
@@ -97,8 +95,8 @@
     gap: 20px;
     align-items: flex-start;
     transition: all 0.3s ease;
+    color: #fff;
 }
-
 
 .card:hover {
     background: rgba(70, 7, 10, 0.4);
@@ -138,15 +136,22 @@
     font-size: 16px;
 }
 
+.mainMedia {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
 
 @media (max-width: 768px) {
 
     .mainCard img {
-    width: 100%;
-    height: 216px;
-    object-fit: cover;
-    border-radius: 10px;
-}
+        width: 100%;
+        height: 216px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
 
     .resourcesCard {
         gap: 24px;
@@ -156,21 +161,25 @@
         font-size: 12px;
     }
 
-     .cardTitle {
+    .cardTitle {
         font-size: 20px;
         -webkit-line-clamp: 1;
     }
 
-     .description {
+    .description {
         font-size: 14px;
     }
 
-     .card .dateText {
+    .card .dateText {
         font-size: 12px;
     }
 
     .dateText {
         font-size: 12px;
+    }
+
+    .mainMedia {
+        height: 216px;
     }
 }
 

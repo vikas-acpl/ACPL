@@ -18,7 +18,7 @@ const Footer = () => {
                 </nav>
                 <div className={styles.social}>
                     <a
-                        href="https://www.linkedin.com/company/acpl-systems/"
+                        href="https://www.linkedin.com/company/acplsystems/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.socialIcon}

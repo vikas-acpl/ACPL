@@ -49,7 +49,7 @@ const OurProducts = () => {
             ]
         },
         {
-            productsTitle: "AttackFence",
+            productsTitle: "AttackFence - Network Detection & Response",
             productsDesc:
                 "Intelligent NDR and log management with unified visibility, threat detection, and automated response across enterprise environments.",
             img: Attackfence,
@@ -72,15 +72,15 @@ const OurProducts = () => {
             ]
         },
         {
-            productsTitle: "CVE Hub",
+            productsTitle: "CVE Hub - Centralised Insight - Real Time",
             productsDesc:
-                "Klassify helps enterprises identify, classify, and protect sensitive data across endpoints and cloud, ensuring compliance, visibility, and strong governance.",
+                "CVE Hub delivers real-time vulnerability intelligence with automated prioritisation and remediation workflows.",
             img: Cvehub,
             productsTags: [
-                "Data Discovery",
-                "Data Classification",
-                "Data Protection",
-                "Regulatory Compliance"
+                "Vulnerability",
+                "Intelligence",
+                "Prioritisation",
+                "Correlation"
             ],
             actionBtn: {
                 label: "Find Out More",
@@ -188,16 +188,12 @@ const OurProducts = () => {
                                     <TiltedCard
                                         imageSrc={product.img}
                                         altText={product.productsTitle}
-                                        containerHeight = '176px'
-                                        imageHeight="176px"
-                                        imageWidth="360px"
                                         rotateAmplitude={12}
                                         scaleOnHover={1.1}
                                         showMobileWarning={false}
                                         showTooltip={false}
                                         displayOverlayContent={false}
                                     />
-                                    {/* <img src={product.img} alt={product.productsTitle} className={styles.productsImage} /> */}
                                     <div className={styles.productsTags}>
                                         {product.productsTags.map(tag => (
                                             <span key={tag}>{tag}</span>
@@ -266,7 +262,6 @@ const OurProducts = () => {
                                             showTooltip={false}
                                             displayOverlayContent={false}
                                         />
-                                        {/* <img src={product.img} alt={product.productsTitle} className={styles.productsImage} /> */}
                                         <div className={styles.productsTags}>
                                             {product.productsTags.map(tag => (
                                                 <span key={tag}>{tag}</span>
@@ -305,7 +300,6 @@ const OurProducts = () => {
                                             showTooltip={false}
                                             displayOverlayContent={false}
                                         />
-                                        {/* <img src={product.img} alt={product.productsTitle} className={styles.productsImage} /> */}
                                         <div className={styles.productsTags}>
                                             {product.productsTags.map(tag => (
                                                 <span key={tag}>{tag}</span>
