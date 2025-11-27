@@ -5,6 +5,7 @@ import styles from './ContactForm.module.css'
 import email from '../../assets/svg/email.svg'
 import phone from '../../assets/svg/phone.svg'
 import Select from 'react-select';
+import SuccessModal from '../SuccessModal/SuccessModal';
 
 const initialValues = {
     name: '',
@@ -358,14 +359,18 @@ const ContactForm = () => {
                                     <button
                                         type="submit"
                                         className={`btn btn--primary ${styles.submitBtn}`}
-                                        disabled={isSubmitting || isSubmitted}
+                                        disabled={isSubmitting}
                                     >
-                                        {isSubmitted ? "Submit successfully" : "Submit"}
+                                        Submit
                                     </button>
                                 </div>
                             </Form>
                         )}
                     </Formik>
+                    <SuccessModal
+                        open={isSubmitted}
+                        onClose={() => setIsSubmitted(false)}
+                    />
                 </div>
             </div>
         </section>

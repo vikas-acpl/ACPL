@@ -148,6 +148,49 @@
     display: block;
 }
 
+.videoTrigger {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.videoOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.videoModal {
+  position: relative;
+  width: 90%;
+  max-width: 960px;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: auto;
+}
+
+.closeButton {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 2;
+}
+
 @media (max-width: 768px) {
 
     .mainCard img {

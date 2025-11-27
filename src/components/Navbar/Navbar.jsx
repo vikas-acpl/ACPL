@@ -1,7 +1,7 @@
 // src/components/Navbar/Navbar.jsx
 import { useState } from 'react';
 import styles from './Navbar.module.css';
-import logo from '../../assets/acpl-logo.png'
+import logo from '../../assets/acpl-logo.svg'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

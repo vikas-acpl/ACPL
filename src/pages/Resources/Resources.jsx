@@ -4,8 +4,11 @@ import StarBorder from '../../components/StarBorder';
 import Blog2 from '../../assets/Resources/Blog2.png'
 import Blog3 from '../../assets/Resources/Blog3.png'
 import Blog4 from '../../assets/Resources/Blog4.png'
+import { useState } from 'react';
 
 const Resources = () => {
+
+    const [open, setOpen] = useState(false);
     return (
         <section id="resources" className={styles.resources}>
             <div className={`container ${styles.resourcesContainer}`}>
@@ -33,14 +36,20 @@ const Resources = () => {
                 </div>
                 <div className={styles.resourcesCard}>
                     <div className={styles.mainCard}>
-                        <video
-                            src="https://acpl.com/anz-resources/acpl-video.mp4"
-                            className={styles.mainMedia}
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                        />
+                        <button
+                            type="button"
+                            className={styles.videoTrigger}
+                            onClick={() => setOpen(true)}
+                        >
+                            <video
+                                src="https://acpl.com/anz-resources/acpl-video.mp4"
+                                className={styles.mainMedia}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                            />
+                        </button>
                         {/* <p className={styles.readTime}>20 MINS READ</p> */}
                         <h3 className={styles.cardTitle}>35 Years of Cybersecurity Excellence</h3>
                         <p className={styles.description}>
@@ -83,6 +92,27 @@ const Resources = () => {
                     </div>
                 </div>
             </div>
+            {open && (
+                <div className={styles.videoOverlay} onClick={() => setOpen(false)}>
+                    <div
+                        className={styles.videoModal}
+                        onClick={e => e.stopPropagation()}
+                    >
+                        <button
+                            className={styles.closeButton}
+                            onClick={() => setOpen(false)}
+                        >
+                            ×
+                        </button>
+                        <video
+                            src="https://acpl.com/anz-resources/acpl-video.mp4"
+                            controls
+                            autoPlay
+                            className={styles.videoPlayer}
+                        />
+                    </div>
+                </div>
+            )}
         </section>
     )
 }
