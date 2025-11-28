@@ -23,7 +23,11 @@ const validationSchema = Yup.object({
     name: Yup.string().required('Required'),
     company: Yup.string().required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
-    contact: Yup.string().required('Required'),
+    contact: Yup.string()
+        .matches(/^\d+$/, 'Contact must contain numbers only')
+        .min(7, 'Contact number too short')
+        .max(15, 'Contact number too long')
+        .required('Required'),
     serviceArea: Yup.string().required('Required'),
     contactMethod: Yup.string().required('Required'),
     description: Yup.string().required('Required'),
@@ -257,7 +261,7 @@ const ContactForm = () => {
                             };
 
                             try {
-                                const response = await fetch('https://script.google.com/macros/s/AKfycbw2O94DURHpO1n7M8FbLtf0UCIZEIOyb30DzdXBYivxixOUlZa17ZPL3ZY7L1EXqs4g/exec', {
+                                const response = await fetch(import.meta.env.VITE_GOOGLE_SCRIPT_URL, {
                                     method: 'POST',
                                     mode: 'no-cors',
                                     headers: {
@@ -339,6 +343,26 @@ const ContactForm = () => {
                                                 name="contact"
                                                 placeholder="Contact Number*"
                                                 className={styles.input}
+                                                type="tel"
+                                                inputMode="numeric"
+                                                pattern="[0-9]*"
+                                                maxLength="15"
+                                                onKeyDown={(e) => {
+                                                    if (!/[0-9]/.test(e.key) &&
+                                                        e.key !== 'Backspace' &&
+                                                        e.key !== 'Delete' &&
+                                                        e.key !== 'Tab' &&
+                                                        e.key !== 'Enter' &&
+                                                        e.key !== 'ArrowLeft' &&
+                                                        e.key !== 'ArrowRight' &&
+                                                        e.key.length !== 1) {
+                                                        e.preventDefault();
+                                                    }
+                                                }}
+                                                onChange={(e) => {
+                                                    const numericValue = e.target.value.replace(/[^0-9]/g, '');
+                                                    setFieldValue('contact', numericValue);
+                                                }}
                                             />
                                         </div>
                                         <div>
