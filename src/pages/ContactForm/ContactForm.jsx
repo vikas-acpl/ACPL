@@ -25,8 +25,8 @@ const validationSchema = Yup.object({
     email: Yup.string().email('Invalid email').required('Required'),
     contact: Yup.string()
         .matches(/^\d+$/, 'Contact must contain numbers only')
-        .min(7, 'Contact number too short')
-        .max(15, 'Contact number too long')
+        .min(7, 'Contact number is invalid')
+        .max(15, 'Contact number is invalid')
         .required('Required'),
     serviceArea: Yup.string().required('Required'),
     contactMethod: Yup.string().required('Required'),
