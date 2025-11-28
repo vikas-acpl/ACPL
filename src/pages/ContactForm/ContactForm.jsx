@@ -7,6 +7,7 @@ import phone from '../../assets/svg/phone.svg'
 import Select from 'react-select';
 import SuccessModal from '../SuccessModal/SuccessModal';
 
+
 const initialValues = {
     name: '',
     company: '',
@@ -244,15 +245,34 @@ const ContactForm = () => {
                         initialValues={initialValues}
                         validationSchema={validationSchema}
                         onSubmit={async (values, actions) => {
-                            console.log(values);
-                            await fetch('/api/contact', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify(values),
-                            });
-                            actions.setSubmitting(false);
-                            actions.resetForm();
-                            setIsSubmitted(true);
+                            const formData = {
+                                name: values.name,
+                                company: values.company,
+                                email: values.email,
+                                countryCode: values.countryCode,
+                                contact: values.contact,
+                                serviceArea: values.serviceArea,
+                                contactMethod: values.contactMethod,
+                                description: values.description
+                            };
+
+                            try {
+                                const response = await fetch('https://script.google.com/macros/s/AKfycbw2O94DURHpO1n7M8FbLtf0UCIZEIOyb30DzdXBYivxixOUlZa17ZPL3ZY7L1EXqs4g/exec', {
+                                    method: 'POST',
+                                    mode: 'no-cors',
+                                    headers: {
+                                        'Content-Type': 'application/x-www-form-urlencoded',
+                                    },
+                                    body: new URLSearchParams(formData).toString()
+                                });
+
+                                actions.setSubmitting(false);
+                                actions.resetForm();
+                                setIsSubmitted(true);
+                            } catch (error) {
+                                console.error('Submission error:', error);
+                                actions.setSubmitting(false);
+                            }
                         }}
                     >
                         {({ values, isSubmitting, setFieldValue }) => (
