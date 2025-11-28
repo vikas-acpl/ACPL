@@ -36,6 +36,16 @@ import OktaClr from '../../assets/PartnersLogoClr/okta-color.svg'
 import WizClr from '../../assets/PartnersLogoClr/Wiz-color.svg'
 import QualysClr from '../../assets/PartnersLogoClr/Qualys-color.svg'
 import { useState } from 'react';
+import NetworkSecurityClr from '../../assets/CompaniesLogoClr/Network-Security-Color.svg'
+import EndpointSecurityClr from '../../assets/CompaniesLogoClr/Endpoint-Security-Color.svg'
+import IdentityAccessClr from '../../assets/CompaniesLogoClr/Identity-Access-Color.svg'
+import CloudSecurityClr from '../../assets/CompaniesLogoClr/Cloud-Security-Color.svg'
+import ZeroTrustClr from '../../assets/CompaniesLogoClr/Zero-Trust-Color.svg'
+import ApplicationSecurityClr from '../../assets/CompaniesLogoClr/Application-Security-Color.svg'
+import SIEMSOARClr from '../../assets/CompaniesLogoClr/SIEM-SOAR-Color.svg'
+import DataClassificationClr from '../../assets/CompaniesLogoClr/Data-Classification-Color.svg'
+import DataSecurityClr from '../../assets/CompaniesLogoClr/Data-Security-Color.svg'
+import EmailSecurityClr from '../../assets/CompaniesLogoClr/Email-Security-Color.svg'
 
 
 const partners = [
@@ -75,6 +85,19 @@ const Companies = [
     { name: "Data Classification", logo: DataClassification },
     { name: "Data Security  ", logo: DataSecurity },
     { name: "Email Security", logo: EmailSecurity },
+];
+
+const CompaniesCLR = [
+    { name: "Network Security", logo: NetworkSecurityClr },
+    { name: "Endpoint Security", logo: EndpointSecurityClr },
+    { name: "Identity & Access Management", logo: IdentityAccessClr },
+    { name: "Cloud Security", logo: CloudSecurityClr },
+    { name: "Zero Trust", logo: ZeroTrustClr },
+    { name: "Application Security", logo: ApplicationSecurityClr },
+    { name: "SIEM & SOAR", logo: SIEMSOARClr },
+    { name: "Data Classification", logo: DataClassificationClr },
+    { name: "Data Security  ", logo: DataSecurityClr },
+    { name: "Email Security", logo: EmailSecurityClr },
 ];
 
 const OurPartners = () => {
@@ -146,23 +169,32 @@ const OurPartners = () => {
                 </div>
                 <div className={styles.partners}>
                     <div className={styles.logoGrid}>
-                        {Companies.map((partner) => (
-                            <div className={styles.partner} key={partner.name}>
-                                <div className={styles.box1}>
+                        {Companies.map((partner, index) => {
+                            const colorLogo = CompaniesCLR[index]?.logo;
+                            const isHovered = hoveredIndex === index;
+                            return (
+                                <div className={styles.partner} key={partner.name} onMouseEnter={() => setHoveredIndex(index)}
+                                    onMouseLeave={() => setHoveredIndex(null)}>
+                                    <div className={styles.box1}>
+                                    </div>
+                                    <div className={styles.box2}>
+                                    </div>
+                                    <div className={styles.box3}>
+                                    </div>
+                                    <div className={styles.box4}>
+                                    </div>
+                                    <div className={styles.background}>
+                                        <img src={Points} alt="points" />
+                                    </div>
+                                    <img
+                                        className={styles.partnerLogo}
+                                        src={isHovered && colorLogo ? colorLogo : partner.logo}
+                                        alt={`${partner.name} logo`}
+                                    />
+                                    <h3>{partner.name}</h3>
                                 </div>
-                                <div className={styles.box2}>
-                                </div>
-                                <div className={styles.box3}>
-                                </div>
-                                <div className={styles.box4}>
-                                </div>
-                                <div className={styles.background}>
-                                    <img src={Points} alt="points" />
-                                </div>
-                                <img className={styles.partnerLogo} src={partner.logo} alt={`${partner.name} logo`} />
-                                <h3>{partner.name}</h3>
-                            </div>
-                        ))}
+                            )
+                        })}
                     </div>
                 </div>
             </div>
